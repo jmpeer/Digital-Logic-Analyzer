@@ -1,0 +1,14 @@
+[Inputs]
+in_clk
+in_idle
+in_unidle
+in_reset
+in_trig
+in_prePost
+[Outputs]
+out_ce
+=out_P3[7:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel StateMachine
+

@@ -1,0 +1,427 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/30/2015  16:37:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE BLINKY.obj, REG51F.obj TO BLINKY CODE (0X0000-0X7FFF) XDATA (0X8000-0XDFFE)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  BLINKY.obj (BLINKY)
+  REG51F.obj (REG51F)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ILDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  BLINKY (BLINKY)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     002BH     UNIT         ?DT?BLINKY
+            DATA    0033H     0018H     UNIT         _DATA_GROUP_
+            IDATA   004BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     01BFH     INBLOCK      ?PR?_READ_MASK?BLINKY
+            CODE    09BFH     011BH     UNIT         ?C?LIB_CODE
+            CODE    0ADAH     00D1H     UNIT         ?CO?BLINKY
+            CODE    0BABH     00B0H     INBLOCK      ?PR?MAIN?BLINKY
+            CODE    0C5BH     009AH     INBLOCK      ?PR?CONFIG_DLA?BLINKY
+            CODE    0CF5H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0D81H     0074H     INBLOCK      ?PR?_PRINT_INTA?BLINKY
+            CODE    0DF5H     0046H     INBLOCK      ?PR?_PRINT_INT?BLINKY
+            CODE    0E3BH     0039H     INBLOCK      ?PR?_WRITE_MASK?BLINKY
+            CODE    0E74H     0036H     UNIT         ?C_INITSEG
+            CODE    0EAAH     0022H     INBLOCK      ?PR?_PRINT_STRING?BLINKY
+            CODE    0ECCH     001EH     INBLOCK      ?PR?UNIDLE_DLA?BLINKY
+            CODE    0EEAH     001AH     INBLOCK      ?PR?IDLE_DLA?BLINKY
+            CODE    0F04H     0013H     INBLOCK      ?PR?RESTART_DLA?BLINKY
+            CODE    0F17H     000CH     INBLOCK      ?PR?SERIAL_INIT?BLINKY
+            CODE    0F23H     0008H     INBLOCK      ?PR?_SERIAL_SEND?BLINKY
+            CODE    0F2BH     0008H     INBLOCK      ?PR?SERIAL_READ?BLINKY
+            CODE    0F33H     0001H     INBLOCK      ?PR?WAIT?BLINKY
+
+
+
+OVERLAY MAP OF MODULE:   BLINKY (BLINKY)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 2
+
+
+
+SEGMENT                            DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?BLINKY
+  +--> ?C_INITSEG
+
+?PR?MAIN?BLINKY                  0033H    0009H
+  +--> ?PR?SERIAL_INIT?BLINKY
+  +--> ?PR?SERIAL_READ?BLINKY
+  +--> ?PR?_SERIAL_SEND?BLINKY
+  +--> ?CO?BLINKY
+  +--> ?PR?_PRINT_STRING?BLINKY
+  +--> ?PR?_PRINT_INT?BLINKY
+  +--> ?PR?CONFIG_DLA?BLINKY
+  +--> ?PR?UNIDLE_DLA?BLINKY
+  +--> ?PR?RESTART_DLA?BLINKY
+
+?PR?_PRINT_STRING?BLINKY         0048H    0003H
+  +--> ?PR?_SERIAL_SEND?BLINKY
+
+?PR?_PRINT_INT?BLINKY            003CH    0008H
+  +--> ?PR?_PRINT_INTA?BLINKY
+
+?PR?_PRINT_INTA?BLINKY           0044H    0002H
+  +--> ?PR?_SERIAL_SEND?BLINKY
+
+?PR?CONFIG_DLA?BLINKY            -----    -----
+  +--> ?PR?IDLE_DLA?BLINKY
+  +--> ?CO?BLINKY
+  +--> ?PR?_PRINT_STRING?BLINKY
+  +--> ?PR?SERIAL_READ?BLINKY
+  +--> ?PR?_READ_MASK?BLINKY
+  +--> ?PR?_WRITE_MASK?BLINKY
+
+?PR?IDLE_DLA?BLINKY              003CH    0003H
+
+?PR?_READ_MASK?BLINKY            003CH    000CH
+  +--> ?CO?BLINKY
+  +--> ?PR?_PRINT_STRING?BLINKY
+  +--> ?PR?SERIAL_READ?BLINKY
+
+?PR?_WRITE_MASK?BLINKY           003CH    0006H
+
+?PR?UNIDLE_DLA?BLINKY            003CH    0003H
+
+?PR?RESTART_DLA?BLINKY           003CH    0003H
+
+
+
+SYMBOL TABLE OF MODULE:  BLINKY (BLINKY)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINKY
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 3
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0F2BH         PUBLIC        serial_read
+  D:00B0H         PUBLIC        P3
+  C:0C5BH         PUBLIC        config_dla
+  C:0F23H         PUBLIC        _serial_send
+  C:0ECCH         PUBLIC        unidle_dla
+  C:0F17H         PUBLIC        serial_init
+  B:0098H.0       PUBLIC        RI
+  C:0F04H         PUBLIC        restart_dla
+  B:0098H.1       PUBLIC        TI
+  C:0D81H         PUBLIC        _print_intA
+  D:0008H         PUBLIC        idle
+  C:0BABH         PUBLIC        main
+  C:0EAAH         PUBLIC        _print_string
+  C:0800H         PUBLIC        _read_mask
+  D:0099H         PUBLIC        SBUF
+  C:0EEAH         PUBLIC        idle_dla
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:0F33H         PUBLIC        wait
+  C:0E3BH         PUBLIC        _write_mask
+  D:000AH         PUBLIC        dont_care_mask
+  D:0012H         PUBLIC        pre_post_trigger
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+  D:0013H         PUBLIC        neg_edg_mask
+  C:0DF5H         PUBLIC        _print_int
+  D:001BH         PUBLIC        hi_mask
+  D:0023H         PUBLIC        low_mask
+  D:002BH         PUBLIC        pos_edg_mask
+  -------         PROC          WAIT
+  C:0F33H         LINE#         33
+  C:0F33H         LINE#         35
+  -------         ENDPROC       WAIT
+  -------         PROC          SERIAL_INIT
+  C:0F17H         LINE#         38
+  C:0F17H         LINE#         39
+  C:0F1AH         LINE#         40
+  C:0F1DH         LINE#         41
+  C:0F20H         LINE#         42
+  C:0F22H         LINE#         43
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _SERIAL_SEND
+  D:0007H         SYMBOL        dat
+  C:0F23H         LINE#         44
+  C:0F23H         LINE#         45
+  C:0F26H         LINE#         46
+  C:0F28H         LINE#         47
+  C:0F2AH         LINE#         48
+  -------         ENDPROC       _SERIAL_SEND
+  -------         PROC          SERIAL_READ
+  C:0F2BH         LINE#         49
+  C:0F2BH         LINE#         50
+  C:0F2EH         LINE#         51
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 4
+
+
+  C:0F30H         LINE#         52
+  C:0F32H         LINE#         53
+  -------         ENDPROC       SERIAL_READ
+  -------         PROC          _PRINT_STRING
+  D:0048H         SYMBOL        s
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0EAAH         LINE#         54
+  C:0EB0H         LINE#         55
+  C:0EB3H         LINE#         56
+  C:0EC2H         LINE#         57
+  C:0EC4H         LINE#         58
+  C:0EC9H         LINE#         59
+  C:0ECBH         LINE#         60
+  -------         ENDPROC       _PRINT_STRING
+  -------         PROC          _PRINT_INTA
+  D:0001H         SYMBOL        num
+  -------         DO            
+  D:0044H         SYMBOL        start
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0D81H         LINE#         61
+  C:0D81H         LINE#         62
+  C:0D86H         LINE#         64
+  C:0DA5H         LINE#         65
+  C:0DADH         LINE#         66
+  C:0DAFH         LINE#         67
+  C:0DBEH         LINE#         68
+  C:0DD7H         LINE#         69
+  C:0DDCH         LINE#         71
+  C:0DEDH         LINE#         72
+  C:0DF4H         LINE#         73
+  -------         ENDPROC       _PRINT_INTA
+  -------         PROC          _PRINT_INT
+  D:0002H         SYMBOL        num
+  -------         DO            
+  D:003CH         SYMBOL        number
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0DF5H         LINE#         74
+  C:0DF9H         LINE#         77
+  C:0DFCH         LINE#         78
+  C:0E13H         LINE#         79
+  C:0E21H         LINE#         80
+  C:0E33H         LINE#         81
+  -------         ENDPROC       _PRINT_INT
+  -------         PROC          _READ_MASK
+  D:003CH         SYMBOL        mask_name
+  D:003FH         SYMBOL        mask_pointer
+  -------         DO            
+  D:0042H         SYMBOL        i
+  D:0044H         SYMBOL        j
+  D:0007H         SYMBOL        val
+  D:0046H         SYMBOL        byte_value
+  -------         ENDDO         
+  C:0800H         LINE#         84
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 5
+
+
+  C:0806H         LINE#         87
+  C:080BH         LINE#         88
+  C:0813H         LINE#         89
+  C:081BH         LINE#         90
+  C:0823H         LINE#         92
+  C:0828H         LINE#         93
+  C:082AH         LINE#         94
+  C:084AH         LINE#         95
+  C:0855H         LINE#         96
+  C:0869H         LINE#         97
+  C:08A7H         LINE#         98
+  C:08AFH         LINE#         99
+  C:08BFH         LINE#         100
+  C:08C5H         LINE#         101
+  C:08D7H         LINE#         102
+  C:0914H         LINE#         103
+  C:091CH         LINE#         104
+  C:092AH         LINE#         105
+  C:0932H         LINE#         106
+  C:0934H         LINE#         107
+  C:0969H         LINE#         108
+  C:096BH         LINE#         109
+  C:09A9H         LINE#         110
+  C:09A9H         LINE#         111
+  C:09A9H         LINE#         112
+  C:09BEH         LINE#         114
+  -------         ENDPROC       _READ_MASK
+  -------         PROC          _WRITE_MASK
+  D:003CH         SYMBOL        mask_pointer
+  D:0004H         SYMBOL        mask_idx
+  -------         DO            
+  D:0006H         SYMBOL        byte
+  D:003FH         SYMBOL        mm
+  -------         ENDDO         
+  C:0E3BH         LINE#         116
+  C:0E41H         LINE#         118
+  C:0E4AH         LINE#         119
+  C:0E4CH         LINE#         120
+  C:0E4FH         LINE#         121
+  C:0E51H         LINE#         122
+  C:0E5FH         LINE#         123
+  C:0E68H         LINE#         124
+  C:0E73H         LINE#         125
+  -------         ENDPROC       _WRITE_MASK
+  -------         PROC          UNIDLE_DLA
+  -------         DO            
+  D:003CH         SYMBOL        restart
+  -------         ENDDO         
+  C:0ECCH         LINE#         126
+  C:0ECCH         LINE#         128
+  C:0ED2H         LINE#         129
+  C:0EDBH         LINE#         130
+  C:0EE4H         LINE#         131
+  C:0EE9H         LINE#         132
+  C:0EE9H         LINE#         133
+  -------         ENDPROC       UNIDLE_DLA
+  -------         PROC          IDLE_DLA
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 6
+
+
+  -------         DO            
+  D:003CH         SYMBOL        stop
+  -------         ENDDO         
+  C:0EEAH         LINE#         134
+  C:0EEAH         LINE#         135
+  C:0EF0H         LINE#         136
+  C:0EF7H         LINE#         137
+  C:0EFEH         LINE#         138
+  C:0F03H         LINE#         139
+  C:0F03H         LINE#         140
+  -------         ENDPROC       IDLE_DLA
+  -------         PROC          RESTART_DLA
+  -------         DO            
+  D:003CH         SYMBOL        restart
+  -------         ENDDO         
+  C:0F04H         LINE#         141
+  C:0F04H         LINE#         143
+  C:0F0DH         LINE#         144
+  C:0F16H         LINE#         145
+  -------         ENDPROC       RESTART_DLA
+  -------         PROC          CONFIG_DLA
+  C:0C5BH         LINE#         147
+  C:0C5BH         LINE#         148
+  C:0C5DH         LINE#         149
+  C:0C65H         LINE#         150
+  C:0C6DH         LINE#         151
+  C:0C71H         LINE#         153
+  C:0C82H         LINE#         154
+  C:0C93H         LINE#         155
+  C:0CA4H         LINE#         156
+  C:0CB5H         LINE#         157
+  C:0CC6H         LINE#         159
+  C:0CD1H         LINE#         160
+  C:0CDAH         LINE#         161
+  C:0CE3H         LINE#         162
+  C:0CECH         LINE#         163
+  -------         ENDPROC       CONFIG_DLA
+  -------         PROC          MAIN
+  -------         DO            
+  D:0033H         SYMBOL        i
+  D:0035H         SYMBOL        j
+  D:0037H         SYMBOL        k
+  D:0039H         SYMBOL        count
+  D:003BH         SYMBOL        c2
+  -------         ENDDO         
+  C:0BABH         LINE#         166
+  C:0BABH         LINE#         167
+  C:0BB0H         LINE#         170
+  C:0BB2H         LINE#         171
+  C:0BB4H         LINE#         173
+  C:0BB9H         LINE#         176
+  C:0BB9H         LINE#         177
+  C:0BBDH         LINE#         178
+  C:0BBFH         LINE#         180
+  C:0BC3H         LINE#         182
+  C:0BC8H         LINE#         183
+  C:0BCBH         LINE#         184
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 7
+
+
+  C:0BD0H         LINE#         185
+  C:0BD3H         LINE#         186
+  C:0BDBH         LINE#         187
+  C:0BE9H         LINE#         188
+  C:0BF1H         LINE#         189
+  C:0BF7H         LINE#         190
+  C:0BFAH         LINE#         191
+  C:0C00H         LINE#         192
+  C:0C08H         LINE#         193
+  C:0C19H         LINE#         194
+  C:0C2AH         LINE#         195
+  C:0C3DH         LINE#         196
+  C:0C3DH         LINE#         198
+  C:0C51H         LINE#         199
+  C:0C51H         LINE#         200
+  C:0C53H         LINE#         201
+  C:0C55H         LINE#         202
+  C:0C55H         LINE#         203
+  C:0C57H         LINE#         204
+  C:0C59H         LINE#         205
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BLINKY
+
+  -------         MODULE        REG51F
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        REG51F
+
+  -------         MODULE        ?C?CLDPTR
+  C:09BFH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:09D8H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:0A05H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?SIDIV
+  C:0A17H         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?ILDOPTR
+  C:0A4DH         PUBLIC        ?C?ILDOPTR
+  -------         ENDMOD        ?C?ILDOPTR
+
+  -------         MODULE        ?C?UIDIV
+  C:0A85H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?WAIT?BLINKY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 058CH BYTE (69%) *
+******************************************************************************
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/30/2015  16:37:34  PAGE 8
+
+
+
+Program Size: data=76.0 xdata=0 code=1847
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

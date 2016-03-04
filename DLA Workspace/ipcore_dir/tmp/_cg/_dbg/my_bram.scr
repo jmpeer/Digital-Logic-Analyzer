@@ -1,0 +1,15 @@
+set -xsthdpdir "C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/ipcore_dir/tmp/_cg/_dbg/my_bram_xsd"
+run
+-ifn "C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/ipcore_dir/tmp/_cg/_dbg/my_bram.prj"
+-ifmt VHDL
+-ofmt NGC
+-ofn "C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/ipcore_dir/tmp/_cg/_dbg/my_bram.ngc"
+-p xc3s500e-5fg320
+-iobuf NO
+-work_lib work
+-ent my_bram
+-arch spartan3e
+-top my_bram
+-bus_delimiter <>
+-lso "C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/ipcore_dir/tmp/_cg/_dbg/_default.lso"
+-use_new_parser yes

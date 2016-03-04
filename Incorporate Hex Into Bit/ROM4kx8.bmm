@@ -1,0 +1,30 @@
+//ROM4kx8.bmm handbuilt .bmm file ( "//" are .bmm comment lines)
+// - use 'PlanAhead' in ISE to find the location of BRAMs in a fitted design, then edit the identification and location info
+// such as 'XLXI_11/ROM2k_00' and 'X1Y2' below in this .bmm file to match
+//
+// - to generate a constraint file ROMfill.ucf which will initialize FPGA BRAM contents during fitting: 
+//	$  data2mem -bm ROM4kx8.bmm -bd BLINKY.mem -o u ROMfill
+//  =>generates 'ROMfill.ucf' which is to be added to the FPGA project.  
+//  	Because ROMfill.ucf locates the ROM contents to specific BRAM locations, subsequent FPGA fitting will always
+//  	place them at that same location, allowing us to quickly (milliseconds) update the FPGA .bit programming file after
+//  a software revision without having to recompile the FPGA logic design. 
+// -to edit an existing FPGA .bit configuration file with new BRAM content (instantantaeously!) without recompiling the FPGA design 
+//  $  data2mem -bm ROM4kx8.bmm -bd BLINKY.mem -bt top.bit -o b BLINKtop.bit
+//  =>generates 'BLINKtop.bit' FPGA configuration containing the new mc8051 code in BLINKY.mem
+//
+//  --- example .bmm for the 'BLINKY' mc8051/Nexys2 demo project ---
+//
+// keyword      anyname     keyword [address range limit of hex file] 
+ADDRESS_BLOCK 	ROMdata 	RAMB16 	[0x0000:0x0FFF]
+	//identify full hierarchical InstName with a particular row and column of the BRAM
+	// block array between X0Y0 (row 0,col 0) and XnYm  (row n, col m depends on device)
+	//'PlanAhead' tool 'Instance Properties' provided the location data below
+
+	BUS_BLOCK
+		XLXI_11/ROM2k_00 [7:0] LOC = X1Y2; 
+	END_BUS_BLOCK;
+
+	BUS_BLOCK
+		XLXI_11/ROM2k_01 [7:0] LOC = X1Y1; 
+	END_BUS_BLOCK;	
+END_ADDRESS_BLOCK;

@@ -1,0 +1,4 @@
+vhdtdtfi -lib work {C:/Users/jmpeer/Desktop/Lab 4, Day 4/8051_logic/Verilog Modules/Trigger.v} -lang verilog -prj my8051 -o Trigger.spl -module Trigger -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Trigger.spl {C:/Users/jmpeer/Desktop/Lab 4, Day 4/8051_logic/Trigger.sym} 
+vhdtdtfi -lib work {C:/Users/jmpeer/Desktop/Lab 4, Day 5/8051_logic/Verilog Modules/Trigger.v} -lang verilog -prj my8051 -o Trigger.spl -module Trigger -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Trigger.spl {C:/Users/jmpeer/Desktop/Lab 4, Day 5/8051_logic/Trigger.sym} 

@@ -1,0 +1,1769 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_p.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_.vhd" in Library work.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_struc.vhd" in Library work.
+Architecture struc of Entity mc8051_core is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_struc.vhd" in Library work.
+Architecture struc of Entity mc8051_alu is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_struc.vhd" in Library work.
+Architecture struc of Entity mc8051_control is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_rtl.vhd" in Library work.
+Architecture rtl of Entity mc8051_siu is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_rtl.vhd" in Library work.
+Architecture rtl of Entity mc8051_tmrctr is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_struc.vhd" in Library work.
+Architecture struc of Entity addsub_core is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_rtl.vhd" in Library work.
+Architecture rtl of Entity alucore is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_rtl.vhd" in Library work.
+Architecture rtl of Entity alumux is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_rtl.vhd" in Library work.
+Architecture rtl of Entity comb_divider is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_rtl.vhd" in Library work.
+Architecture rtl of Entity comb_mltplr is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_rtl.vhd" in Library work.
+Architecture rtl of Entity control_fsm is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd" in Library work.
+Architecture rtl of Entity control_mem is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_rtl.vhd" in Library work.
+Architecture rtl of Entity dcml_adjust is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_rtl.vhd" in Library work.
+Architecture rtl of Entity addsub_cy is up to date.
+Compiling vhdl file "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_rtl.vhd" in Library work.
+Architecture rtl of Entity addsub_ovcy is up to date.
+Compiling verilog file "Verilog Modules/BRAM_16x1K.v" in library work
+Compiling verilog file "Verilog Modules/BRAM_32x1K.v" in library work
+Module <BRAM_16x1K> compiled
+Compiling verilog file "Verilog Modules/BRAM_64x1K.v" in library work
+Module <BRAM_32x1K> compiled
+Compiling verilog file "wiz_clkgen.v" in library work
+Module <BRAM_64x1K> compiled
+Compiling verilog file "Verilog Modules/Trigger.v" in library work
+Module <wiz_clkgen> compiled
+Module <Trigger_0> compiled
+Module <Trigger_1> compiled
+Module <Trigger_2> compiled
+Module <Trigger_3> compiled
+Module <Trigger_4> compiled
+Compiling verilog file "Verilog Modules/StateMachine.v" in library work
+Module <Trigger> compiled
+Compiling verilog file "Verilog Modules/SampleInput.v" in library work
+Module <StateMachine> compiled
+Compiling verilog file "Verilog Modules/PrevRegister.v" in library work
+Module <SampleInput> compiled
+Compiling verilog file "Verilog Modules/MMIOC.v" in library work
+Module <PrevRegsiter> compiled
+Compiling verilog file "Verilog Modules/Mask.v" in library work
+Module <MMIOC> compiled
+Compiling verilog file "Verilog Modules/ConfigRegister.v" in library work
+Module <Mask> compiled
+Compiling verilog file "Verilog Modules/CaptureAddress.v" in library work
+Module <ConfigRegister> compiled
+Compiling verilog file "Verilog Modules/Capture.v" in library work
+Module <CaptureAddress> compiled
+Compiling verilog file "Verilog Modules/AutoIncrementRegister.v" in library work
+Module <Capture> compiled
+Compiling verilog file "LUT_RAM_from_template02.v" in library work
+Module <AutoIncrementRegister> compiled
+Compiling verilog file "BRAM4kx8.v" in library work
+Module <LUT_RAM_from_template> compiled
+Compiling verilog file "top.vf" in library work
+Module <BRAM4kx8> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for entity <mc8051_core> in library <work> (architecture <struc>).
+
+Analyzing hierarchy for module <LUT_RAM_from_template> in library <work>.
+
+Analyzing hierarchy for module <BRAM4kx8> in library <work>.
+
+Analyzing hierarchy for module <wiz_clkgen> in library <work>.
+
+Analyzing hierarchy for module <MMIOC> in library <work>.
+
+Analyzing hierarchy for module <ConfigRegister> in library <work>.
+
+Analyzing hierarchy for module <StateMachine> in library <work>.
+
+Analyzing hierarchy for module <Mask> in library <work>.
+
+Analyzing hierarchy for module <Trigger> in library <work>.
+
+Analyzing hierarchy for module <PrevRegsiter> in library <work>.
+
+Analyzing hierarchy for module <AutoIncrementRegister> in library <work>.
+
+Analyzing hierarchy for module <CaptureAddress> in library <work>.
+
+Analyzing hierarchy for module <Capture> in library <work>.
+
+Analyzing hierarchy for module <SampleInput> in library <work>.
+
+Analyzing hierarchy for entity <mc8051_control> in library <work> (architecture <struc>).
+
+Analyzing hierarchy for entity <mc8051_alu> in library <work> (architecture <struc>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for entity <mc8051_siu> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <mc8051_tmrctr> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for module <Trigger_0> in library <work>.
+
+Analyzing hierarchy for module <Trigger_1> in library <work>.
+
+Analyzing hierarchy for module <Trigger_2> in library <work>.
+
+Analyzing hierarchy for module <Trigger_3> in library <work>.
+
+Analyzing hierarchy for module <Trigger_4> in library <work>.
+
+Analyzing hierarchy for module <BRAM_64x1K> in library <work>.
+
+Analyzing hierarchy for entity <control_fsm> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <control_mem> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <alumux> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for entity <alucore> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for entity <addsub_core> in library <work> (architecture <struc>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for entity <comb_mltplr> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for entity <comb_divider> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for entity <dcml_adjust> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 8
+
+Analyzing hierarchy for module <BRAM_32x1K> in library <work>.
+
+Analyzing hierarchy for entity <addsub_cy> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 4
+
+Analyzing hierarchy for entity <addsub_ovcy> in library <work> (architecture <rtl>) with generics.
+	DWIDTH = 4
+
+Analyzing hierarchy for module <BRAM_16x1K> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+WARNING:Xst:852 - "top.vf" line 74: Unconnected input port 'all_t0_i' of instance 'XLXI_1' is tied to GND.
+WARNING:Xst:852 - "top.vf" line 74: Unconnected input port 'all_t1_i' of instance 'XLXI_1' is tied to GND.
+WARNING:Xst:852 - "top.vf" line 74: Unconnected input port 'datax_i' of instance 'XLXI_1' is tied to GND.
+WARNING:Xst:852 - "top.vf" line 74: Unconnected input port 'int0_i' of instance 'XLXI_1' is tied to GND.
+WARNING:Xst:852 - "top.vf" line 74: Unconnected input port 'int1_i' of instance 'XLXI_1' is tied to GND.
+WARNING:Xst:852 - "top.vf" line 163: Unconnected input port 'in_P0' of instance 'XLXI_20' is tied to GND.
+WARNING:Xst:852 - "top.vf" line 163: Unconnected input port 'in_P1' of instance 'XLXI_20' is tied to GND.
+Module <top> is correct for synthesis.
+ 
+Analyzing Entity <mc8051_core> in library <work> (Architecture <struc>).
+Entity <mc8051_core> analyzed. Unit <mc8051_core> generated.
+
+Analyzing Entity <mc8051_control> in library <work> (Architecture <struc>).
+Entity <mc8051_control> analyzed. Unit <mc8051_control> generated.
+
+Analyzing Entity <control_fsm> in library <work> (Architecture <rtl>).
+WARNING:Xst:819 - "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_rtl.vhd" line 303: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <PX0>, <EX0>, <PT0>, <ET0>, <PX1>, <EX1>, <PT1>, <ET1>, <PS0>, <ES>, <CY>
+Entity <control_fsm> analyzed. Unit <control_fsm> generated.
+
+Analyzing Entity <control_mem> in library <work> (Architecture <rtl>).
+WARNING:Xst:819 - "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd" line 556: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <EA>, <EX0>, <ET0>, <EX1>, <ET1>, <ES>, <PX0>, <PT0>, <PX1>, <PT1>, <PS0>
+INFO:Xst:1561 - "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd" line 662: Mux is complete : default of case is discarded
+Entity <control_mem> analyzed. Unit <control_mem> generated.
+
+Analyzing generic Entity <mc8051_alu> in library <work> (Architecture <struc>).
+	DWIDTH = 8
+Entity <mc8051_alu> analyzed. Unit <mc8051_alu> generated.
+
+Analyzing generic Entity <alumux> in library <work> (Architecture <rtl>).
+	DWIDTH = 8
+Entity <alumux> analyzed. Unit <alumux> generated.
+
+Analyzing generic Entity <alucore> in library <work> (Architecture <rtl>).
+	DWIDTH = 8
+Entity <alucore> analyzed. Unit <alucore> generated.
+
+Analyzing generic Entity <addsub_core> in library <work> (Architecture <struc>).
+	DWIDTH = 8
+Entity <addsub_core> analyzed. Unit <addsub_core> generated.
+
+Analyzing generic Entity <addsub_cy> in library <work> (Architecture <rtl>).
+	DWIDTH = 4
+Entity <addsub_cy> analyzed. Unit <addsub_cy> generated.
+
+Analyzing generic Entity <addsub_ovcy> in library <work> (Architecture <rtl>).
+	DWIDTH = 4
+Entity <addsub_ovcy> analyzed. Unit <addsub_ovcy> generated.
+
+Analyzing generic Entity <comb_mltplr> in library <work> (Architecture <rtl>).
+	DWIDTH = 8
+Entity <comb_mltplr> analyzed. Unit <comb_mltplr> generated.
+
+Analyzing generic Entity <comb_divider> in library <work> (Architecture <rtl>).
+	DWIDTH = 8
+Entity <comb_divider> analyzed. Unit <comb_divider> generated.
+
+Analyzing generic Entity <dcml_adjust> in library <work> (Architecture <rtl>).
+	DWIDTH = 8
+Entity <dcml_adjust> analyzed. Unit <dcml_adjust> generated.
+
+Analyzing Entity <mc8051_siu> in library <work> (Architecture <rtl>).
+Entity <mc8051_siu> analyzed. Unit <mc8051_siu> generated.
+
+Analyzing Entity <mc8051_tmrctr> in library <work> (Architecture <rtl>).
+Entity <mc8051_tmrctr> analyzed. Unit <mc8051_tmrctr> generated.
+
+Analyzing module <LUT_RAM_from_template> in library <work>.
+Module <LUT_RAM_from_template> is correct for synthesis.
+ 
+WARNING:Xst:38 - Value "{AUTO | DISTRIBUTED | PIPE_DISTRIBUTED}" of property "RAM_STYLE" not applicable.
+Analyzing module <BRAM4kx8> in library <work>.
+Module <BRAM4kx8> is correct for synthesis.
+ 
+    Set user-defined property "INIT =  000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "SRVAL =  000" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <ROM2k_00> in unit <BRAM4kx8>.
+    Set user-defined property "INIT =  000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "SRVAL =  000" for instance <ROM2k_01> in unit <BRAM4kx8>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <ROM2k_01> in unit <BRAM4kx8>.
+Analyzing module <wiz_clkgen> in library <work>.
+Module <wiz_clkgen> is correct for synthesis.
+ 
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <CLKIN_IBUFG_INST> in unit <wiz_clkgen>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <CLKIN_IBUFG_INST> in unit <wiz_clkgen>.
+    Set user-defined property "IBUF_LOW_PWR =  TRUE" for instance <CLKIN_IBUFG_INST> in unit <wiz_clkgen>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <CLKIN_IBUFG_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLKDV_DIVIDE =  4.500000" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLKFX_DIVIDE =  1" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLKFX_MULTIPLY =  4" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLKIN_DIVIDE_BY_2 =  FALSE" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLKIN_PERIOD =  20.000000" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLKOUT_PHASE_SHIFT =  NONE" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "CLK_FEEDBACK =  1X" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "DESKEW_ADJUST =  SYSTEM_SYNCHRONOUS" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "DFS_FREQUENCY_MODE =  LOW" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "DLL_FREQUENCY_MODE =  LOW" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "DSS_MODE =  NONE" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "DUTY_CYCLE_CORRECTION =  TRUE" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "FACTORY_JF =  C080" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "PHASE_SHIFT =  0" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+    Set user-defined property "STARTUP_WAIT =  FALSE" for instance <DCM_SP_INST> in unit <wiz_clkgen>.
+Analyzing module <MMIOC> in library <work>.
+Module <MMIOC> is correct for synthesis.
+ 
+Analyzing module <ConfigRegister> in library <work>.
+Module <ConfigRegister> is correct for synthesis.
+ 
+Analyzing module <StateMachine> in library <work>.
+Module <StateMachine> is correct for synthesis.
+ 
+Analyzing module <Mask> in library <work>.
+INFO:Xst:1433 - Contents of array <mask_0> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <mask_1> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <mask_2> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <mask_3> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <mask_4> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <Mask> is correct for synthesis.
+ 
+Analyzing module <Trigger> in library <work>.
+Module <Trigger> is correct for synthesis.
+ 
+Analyzing module <Trigger_0> in library <work>.
+Module <Trigger_0> is correct for synthesis.
+ 
+Analyzing module <Trigger_1> in library <work>.
+Module <Trigger_1> is correct for synthesis.
+ 
+Analyzing module <Trigger_2> in library <work>.
+Module <Trigger_2> is correct for synthesis.
+ 
+Analyzing module <Trigger_3> in library <work>.
+Module <Trigger_3> is correct for synthesis.
+ 
+Analyzing module <Trigger_4> in library <work>.
+Module <Trigger_4> is correct for synthesis.
+ 
+Analyzing module <PrevRegsiter> in library <work>.
+Module <PrevRegsiter> is correct for synthesis.
+ 
+Analyzing module <AutoIncrementRegister> in library <work>.
+Module <AutoIncrementRegister> is correct for synthesis.
+ 
+Analyzing module <CaptureAddress> in library <work>.
+Module <CaptureAddress> is correct for synthesis.
+ 
+Analyzing module <Capture> in library <work>.
+Module <Capture> is correct for synthesis.
+ 
+Analyzing module <BRAM_64x1K> in library <work>.
+Module <BRAM_64x1K> is correct for synthesis.
+ 
+Analyzing module <BRAM_32x1K> in library <work>.
+Module <BRAM_32x1K> is correct for synthesis.
+ 
+Analyzing module <BRAM_16x1K> in library <work>.
+Module <BRAM_16x1K> is correct for synthesis.
+ 
+    Set user-defined property "INIT =  00000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "SRVAL =  00000" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <ROM2k_00> in unit <BRAM_16x1K>.
+Analyzing module <SampleInput> in library <work>.
+Module <SampleInput> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <LUT_RAM_from_template>.
+    Related source file is "LUT_RAM_from_template02.v".
+    Found 128x8-bit single-port RAM <Mram_RAMDATA> for signal <RAMDATA>.
+    Found 8-bit register for signal <DOUT>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <LUT_RAM_from_template> synthesized.
+
+
+Synthesizing Unit <MMIOC>.
+    Related source file is "Verilog Modules/MMIOC.v".
+WARNING:Xst:647 - Input <in_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <in_we> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <MMIOC> synthesized.
+
+
+Synthesizing Unit <ConfigRegister>.
+    Related source file is "Verilog Modules/ConfigRegister.v".
+WARNING:Xst:646 - Signal <register<7:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 8-bit register for signal <register>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <ConfigRegister> synthesized.
+
+
+Synthesizing Unit <StateMachine>.
+    Related source file is "Verilog Modules/StateMachine.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 5                                              |
+    | Clock              | in_clk                    (rising_edge)        |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <out_ce>.
+    Found 8-bit register for signal <out_P3>.
+    Found 10-bit down counter for signal <count>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred   9 D-type flip-flop(s).
+Unit <StateMachine> synthesized.
+
+
+Synthesizing Unit <Mask>.
+    Related source file is "Verilog Modules/Mask.v".
+WARNING:Xst:647 - Input <in_P1<7:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <P1_stop> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <P1_start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 64-bit register for signal <mask_0>.
+    Found 64-bit register for signal <mask_1>.
+    Found 64-bit register for signal <mask_2>.
+    Found 64-bit register for signal <mask_3>.
+    Found 64-bit register for signal <mask_4>.
+    Summary:
+	inferred 320 D-type flip-flop(s).
+Unit <Mask> synthesized.
+
+
+Synthesizing Unit <PrevRegsiter>.
+    Related source file is "Verilog Modules/PrevRegister.v".
+    Found 64-bit register for signal <out_data>.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+Unit <PrevRegsiter> synthesized.
+
+
+Synthesizing Unit <AutoIncrementRegister>.
+    Related source file is "Verilog Modules/AutoIncrementRegister.v".
+WARNING:Xst:647 - Input <in_P0> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <in_P1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 10-bit up counter for signal <count>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <AutoIncrementRegister> synthesized.
+
+
+Synthesizing Unit <CaptureAddress>.
+    Related source file is "Verilog Modules/CaptureAddress.v".
+Unit <CaptureAddress> synthesized.
+
+
+Synthesizing Unit <SampleInput>.
+    Related source file is "Verilog Modules/SampleInput.v".
+    Found 64-bit up counter for signal <data>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <SampleInput> synthesized.
+
+
+Synthesizing Unit <mc8051_siu>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_rtl.vhd".
+WARNING:Xst:646 - Signal <s_tran_sh<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Using one-hot encoding for signal <v_rxstep$mux0005>.
+    Using one-hot encoding for signal <v_txstep$mux0005>.
+    Found 1-bit register for signal <rxd_o>.
+    Found 1-bit register for signal <rxdwr_o>.
+    Found 1-bit 4-to-1 multiplexer for signal <rxd_o$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <rxdwr_o$mux0001> created at line 422.
+    Found 1-bit register for signal <s_det_ff0>.
+    Found 1-bit register for signal <s_det_ff1>.
+    Found 1-bit register for signal <s_ff0>.
+    Found 1-bit register for signal <s_ff1>.
+    Found 1-bit register for signal <s_rb8>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_rb8$mux0000> created at line 830.
+    Found 8-bit register for signal <s_recv_buf>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_0$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_1$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_2$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_3$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_4$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_5$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_6$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_buf_7$mux0000> created at line 830.
+    Found 1-bit register for signal <s_recv_done>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_done$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_done$mux0002> created at line 995.
+    Found 8-bit register for signal <s_recv_sh>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_0$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_1$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_2$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_3$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_4$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_5$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_6$mux0000> created at line 830.
+    Found 1-bit 4-to-1 multiplexer for signal <s_recv_sh_7$mux0000> created at line 830.
+    Found 4-bit register for signal <s_recv_state>.
+    Found 4-bit adder for signal <s_recv_state$addsub0000> created at line 1192.
+    Found 1-bit register for signal <s_rxd_ff0>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_rxd_ff0$mux0000> created at line 347.
+    Found 1-bit register for signal <s_rxd_ff1>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_rxd_ff1$mux0000> created at line 347.
+    Found 1-bit register for signal <s_rxd_ff2>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_rxd_ff2$mux0000> created at line 347.
+    Found 1-bit register for signal <s_rxm13_ff0>.
+    Found 1-bit register for signal <s_rxm13_ff1>.
+    Found 6-bit register for signal <s_rxpre_count>.
+    Found 6-bit adder for signal <s_rxpre_count$share0000>.
+    Found 1-bit register for signal <s_tran_done>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_done$mux0000> created at line 422.
+    Found 10-bit register for signal <s_tran_sh<10:1>>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_1$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_10$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_2$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_3$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_4$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_5$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_6$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_7$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_8$mux0000> created at line 422.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tran_sh_9$mux0000> created at line 422.
+    Found 4-bit register for signal <s_tran_state>.
+    Found 4-bit adder for signal <s_tran_state$addsub0000> created at line 794.
+    Found 1-bit register for signal <s_trans>.
+    Found 1-bit register for signal <s_txdm0>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_txdm0$mux0001> created at line 422.
+    Found 1-bit register for signal <s_txm13_ff0>.
+    Found 1-bit register for signal <s_txm13_ff1>.
+    Found 6-bit register for signal <s_txpre_count>.
+    Found 6-bit adder for signal <s_txpre_count$share0000>.
+    Found 3-bit 4-to-1 multiplexer for signal <v_rxstep$mux0005> created at line 830.
+    Found 3-bit 4-to-1 multiplexer for signal <v_txstep$mux0005> created at line 422.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  42 Multiplexer(s).
+Unit <mc8051_siu> synthesized.
+
+
+Synthesizing Unit <mc8051_tmrctr>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_rtl.vhd".
+    Found 8-bit register for signal <s_counth0>.
+    Found 8-bit 4-to-1 multiplexer for signal <s_counth0$mux0001> created at line 248.
+    Found 8-bit adder for signal <s_counth0$share0000> created at line 248.
+    Found 8-bit register for signal <s_counth1>.
+    Found 8-bit 4-to-1 multiplexer for signal <s_counth1$mux0000> created at line 528.
+    Found 8-bit adder for signal <s_counth1$share0000> created at line 528.
+    Found 8-bit register for signal <s_countl0>.
+    Found 8-bit adder for signal <s_countl0$add0000> created at line 281.
+    Found 8-bit 4-to-1 multiplexer for signal <s_countl0$mux0004> created at line 248.
+    Found 8-bit register for signal <s_countl1>.
+    Found 8-bit adder for signal <s_countl1$add0000> created at line 567.
+    Found 8-bit 4-to-1 multiplexer for signal <s_countl1$mux0003> created at line 528.
+    Found 2-bit register for signal <s_int0_sync>.
+    Found 2-bit register for signal <s_int1_sync>.
+    Found 4-bit up counter for signal <s_pre_count>.
+    Found 1-bit register for signal <s_t0ff0>.
+    Found 1-bit register for signal <s_t0ff1>.
+    Found 1-bit register for signal <s_t0ff2>.
+    Found 1-bit register for signal <s_t1ff0>.
+    Found 1-bit register for signal <s_t1ff1>.
+    Found 1-bit register for signal <s_t1ff2>.
+    Found 1-bit register for signal <s_tf0>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tf0$mux0011> created at line 248.
+    Found 1-bit register for signal <s_tf1>.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tf1$mux0003> created at line 248.
+    Found 1-bit 4-to-1 multiplexer for signal <s_tf1$mux0017> created at line 528.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  44 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  35 Multiplexer(s).
+Unit <mc8051_tmrctr> synthesized.
+
+
+Synthesizing Unit <control_fsm>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_rtl.vhd".
+WARNING:Xst:647 - Input <ie<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ip<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <psw<6:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Using one-hot encoding for signal <s_instr_category>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <s_instr_category> of Case statement line 437 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <s_instr_category> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+Unit <control_fsm> synthesized.
+
+
+Synthesizing Unit <control_mem>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd".
+WARNING:Xst:646 - Signal <scon<0><2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <s_tsel<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <s_ssel<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Register <s_int1_h1<0>> equivalent to <s_int0_h1<0>> has been removed
+    Register <s_int1_h2<0>> equivalent to <s_int0_h2<0>> has been removed
+    Register <s_int1_h3<0>> equivalent to <s_int0_h3<0>> has been removed
+    Found 8-bit 4-to-1 multiplexer for signal <adrx_o<7:0>>.
+    Found 1-bit register for signal <intblock_o>.
+    Found 1-bit register for signal <all_wt_en_o<0>>.
+    Found 1-bit register for signal <all_trans_o<0>>.
+    Found 8-bit register for signal <acc>.
+    Found 8-bit register for signal <b>.
+    Found 8-bit register for signal <dph>.
+    Found 8-bit register for signal <dpl>.
+    Found 8-bit register for signal <ie>.
+    Found 8-bit register for signal <ip>.
+    Found 8-bit register for signal <p0>.
+    Found 8-bit register for signal <p1>.
+    Found 8-bit register for signal <p2>.
+    Found 8-bit register for signal <p3>.
+    Found 16-bit register for signal <pc>.
+    Found 16-bit adder for signal <pc_comb$add0000> created at line 841.
+    Found 16-bit adder for signal <pc_comb$add0001> created at line 851.
+    Found 16-bit adder for signal <pc_comb_15$add0000> created at line 832.
+    Found 16-bit adder for signal <pc_plus1>.
+    Found 16-bit adder for signal <pc_plus2>.
+    Found 4-bit register for signal <pcon>.
+    Found 8-bit register for signal <psw>.
+    Found 8-bit 16-to-1 multiplexer for signal <s_adr>.
+    Found 8-bit adder for signal <s_adr$add0000> created at line 662.
+    Found 8-bit 16-to-1 multiplexer for signal <s_bit_data$varindex0000> created at line 456.
+    Found 1-bit register for signal <s_ext0isr_d>.
+    Found 1-bit register for signal <s_ext0isrh_d>.
+    Found 1-bit register for signal <s_ext1isr_d>.
+    Found 1-bit register for signal <s_ext1isrh_d>.
+    Found 8-bit register for signal <s_help>.
+    Found 16-bit register for signal <s_help16>.
+    Found 16-bit adder for signal <s_help16$addsub0000> created at line 759.
+    Found 16-bit 4-to-1 multiplexer for signal <s_help16$mux0000> created at line 757.
+    Found 1-bit register for signal <s_helpb>.
+    Found 1-bit register for signal <s_int0_h1<0>>.
+    Found 1-bit register for signal <s_int0_h2<0>>.
+    Found 1-bit register for signal <s_int0_h3<0>>.
+    Found 1-bit register for signal <s_inthigh>.
+    Found 1-bit register for signal <s_intlow>.
+    Found 1-bit register for signal <s_intpre2>.
+    Found 8-bit register for signal <s_ir>.
+    Found 1-bit xor8 for signal <s_p>.
+    Found 8-bit register for signal <s_p0>.
+    Found 8-bit register for signal <s_p1>.
+    Found 8-bit register for signal <s_p2>.
+    Found 8-bit register for signal <s_p3>.
+    Found 8-bit register for signal <s_preadr>.
+    Found 8-bit register for signal <s_r0_b0>.
+    Found 8-bit register for signal <s_r0_b1>.
+    Found 8-bit register for signal <s_r0_b2>.
+    Found 8-bit register for signal <s_r0_b3>.
+    Found 8-bit register for signal <s_r1_b0>.
+    Found 8-bit register for signal <s_r1_b1>.
+    Found 8-bit register for signal <s_r1_b2>.
+    Found 8-bit register for signal <s_r1_b3>.
+    Found 8-bit 16-to-1 multiplexer for signal <s_reg_data$varindex0000> created at line 411.
+    Found 8-bit register for signal <s_reload<0>>.
+    Found 1-bit register for signal <s_ri_h1<0>>.
+    Found 1-bit register for signal <s_ri_h2<0>>.
+    Found 1-bit register for signal <s_smodreg<0>>.
+    Found 1-bit register for signal <s_tf0_h1<0>>.
+    Found 1-bit register for signal <s_tf0_h2<0>>.
+    Found 1-bit register for signal <s_tf1_h1<0>>.
+    Found 1-bit register for signal <s_tf1_h2<0>>.
+    Found 1-bit register for signal <s_ti_h1<0>>.
+    Found 1-bit register for signal <s_ti_h2<0>>.
+    Found 2-bit register for signal <s_wt<0>>.
+    Found 8-bit register for signal <sbuf<0>>.
+    Found 8-bit register for signal <sp>.
+    Found 8-bit subtractor for signal <sp$share0000> created at line 937.
+    Found 8-bit register for signal <ssel>.
+    Found 3-bit register for signal <state>.
+    Found 8-bit register for signal <tmod<0>>.
+    Found 8-bit register for signal <tsel>.
+    Summary:
+	inferred 455 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred  48 Multiplexer(s).
+	inferred   1 Xor(s).
+Unit <control_mem> synthesized.
+
+
+Synthesizing Unit <alumux>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_rtl.vhd".
+    Found 32x4-bit ROM for signal <alu_cmd_o$mux0000>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <alumux> synthesized.
+
+
+Synthesizing Unit <alucore>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_rtl.vhd".
+    Found 8-bit comparator less for signal <cy_o_1$cmp_lt0000> created at line 142.
+    Found 8-bit comparator equal for signal <result_o_0$cmp_eq0008> created at line 136.
+    Found 1-bit xor2 for signal <result_o_0$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_1$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_2$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_3$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_4$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_5$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_6$xor0000> created at line 94.
+    Found 1-bit xor2 for signal <result_o_7$xor0000> created at line 94.
+    Summary:
+	inferred   2 Comparator(s).
+Unit <alucore> synthesized.
+
+
+Synthesizing Unit <comb_mltplr>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_rtl.vhd".
+    Found 8x8-bit multiplier for signal <product_o>.
+    Summary:
+	inferred   1 Multiplier(s).
+Unit <comb_mltplr> synthesized.
+
+
+Synthesizing Unit <comb_divider>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_rtl.vhd".
+    Found 8-bit subtractor for signal <rmndr_o$addsub0000> created at line 92.
+    Found 8-bit comparator greatequal for signal <v_actl_dvdnd_7$cmp_ge0000> created at line 88.
+    Found 8-bit comparator greatequal for signal <v_actl_dvdnd_7$cmp_ge0001> created at line 88.
+    Found 8-bit comparator greatequal for signal <v_actl_dvdnd_7$cmp_ge0002> created at line 88.
+    Found 8-bit comparator greatequal for signal <v_actl_dvdnd_7$cmp_ge0003> created at line 88.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0000> created at line 92.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0001> created at line 92.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0002> created at line 92.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0003> created at line 92.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0004> created at line 92.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0005> created at line 92.
+    Found 8-bit subtractor for signal <v_dffrnc$sub0006> created at line 92.
+    Found 8-bit comparator greatequal for signal <v_qutnt_0$cmp_ge0000> created at line 88.
+    Found 8-bit comparator greatequal for signal <v_qutnt_5$cmp_ge0000> created at line 88.
+    Found 8-bit comparator greatequal for signal <v_qutnt_6$cmp_ge0000> created at line 88.
+    Found 8-bit comparator greatequal for signal <v_qutnt_7$cmp_ge0000> created at line 88.
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+Unit <comb_divider> synthesized.
+
+
+Synthesizing Unit <dcml_adjust>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_rtl.vhd".
+    Found 4-bit comparator greater for signal <v_cy_1$cmp_gt0000> created at line 103.
+    Found 5-bit adder for signal <v_tmpda1$add0000> created at line 109.
+    Found 4-bit comparator greater for signal <v_tmpda_8$cmp_gt0000> created at line 88.
+    Found 5-bit adder for signal <v_tmpda_8_4$add0000> created at line 127.
+    Found 5-bit adder for signal <v_tmpda_8_4$add0001> created at line 90.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <dcml_adjust> synthesized.
+
+
+Synthesizing Unit <addsub_cy>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_rtl.vhd".
+    Found 6-bit addsub for signal <v_result$mux0000> created at line 81.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <addsub_cy> synthesized.
+
+
+Synthesizing Unit <addsub_ovcy>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_rtl.vhd".
+    Found 3-bit addsub for signal <v_lresult$mux0000> created at line 115.
+    Found 5-bit adder for signal <v_result$add0000> created at line 118.
+    Found 5-bit subtractor for signal <v_result$sub0000> created at line 125.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+Unit <addsub_ovcy> synthesized.
+
+
+Synthesizing Unit <Trigger_0>.
+    Related source file is "Verilog Modules/Trigger.v".
+WARNING:Xst:647 - Input <in_prev> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <in_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <Trigger_0> synthesized.
+
+
+Synthesizing Unit <Trigger_1>.
+    Related source file is "Verilog Modules/Trigger.v".
+Unit <Trigger_1> synthesized.
+
+
+Synthesizing Unit <Trigger_2>.
+    Related source file is "Verilog Modules/Trigger.v".
+Unit <Trigger_2> synthesized.
+
+
+Synthesizing Unit <Trigger_3>.
+    Related source file is "Verilog Modules/Trigger.v".
+WARNING:Xst:647 - Input <in_prev> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <Trigger_3> synthesized.
+
+
+Synthesizing Unit <Trigger_4>.
+    Related source file is "Verilog Modules/Trigger.v".
+WARNING:Xst:647 - Input <in_prev> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <Trigger_4> synthesized.
+
+
+Synthesizing Unit <BRAM4kx8>.
+    Related source file is "BRAM4kx8.v".
+WARNING:Xst:646 - Signal <DOP_01> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <DOP_00> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <select>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <BRAM4kx8> synthesized.
+
+
+Synthesizing Unit <wiz_clkgen>.
+    Related source file is "wiz_clkgen.v".
+Unit <wiz_clkgen> synthesized.
+
+
+Synthesizing Unit <Trigger>.
+    Related source file is "Verilog Modules/Trigger.v".
+WARNING:Xst:647 - Input <in_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 64-bit comparator equal for signal <out_trig>.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <Trigger> synthesized.
+
+
+Synthesizing Unit <mc8051_control>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_struc.vhd".
+Unit <mc8051_control> synthesized.
+
+
+Synthesizing Unit <addsub_core>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_struc.vhd".
+WARNING:Xst:1780 - Signal <s_cy<3><0>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <addsub_core> synthesized.
+
+
+Synthesizing Unit <BRAM_16x1K>.
+    Related source file is "Verilog Modules/BRAM_16x1K.v".
+WARNING:Xst:646 - Signal <parity> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <BRAM_16x1K> synthesized.
+
+
+Synthesizing Unit <mc8051_alu>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_struc.vhd".
+Unit <mc8051_alu> synthesized.
+
+
+Synthesizing Unit <BRAM_32x1K>.
+    Related source file is "Verilog Modules/BRAM_32x1K.v".
+Unit <BRAM_32x1K> synthesized.
+
+
+Synthesizing Unit <mc8051_core>.
+    Related source file is "C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_struc.vhd".
+WARNING:Xst:1780 - Signal <s_reset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <s_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <mc8051_core> synthesized.
+
+
+Synthesizing Unit <BRAM_64x1K>.
+    Related source file is "Verilog Modules/BRAM_64x1K.v".
+Unit <BRAM_64x1K> synthesized.
+
+
+Synthesizing Unit <Capture>.
+    Related source file is "Verilog Modules/Capture.v".
+WARNING:Xst:1780 - Signal <addr_stop> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <addr_start> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <addr<15:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 64-bit up counter for signal <count>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <Capture> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.vf".
+WARNING:Xst:646 - Signal <ROMaddr<15:12>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 128x8-bit single-port RAM                             : 1
+# ROMs                                                 : 1
+ 32x4-bit ROM                                          : 1
+# Multipliers                                          : 1
+ 8x8-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 31
+ 16-bit adder                                          : 6
+ 3-bit addsub                                          : 1
+ 4-bit adder                                           : 2
+ 5-bit adder                                           : 4
+ 5-bit subtractor                                      : 1
+ 6-bit adder                                           : 2
+ 6-bit addsub                                          : 1
+ 8-bit adder                                           : 5
+ 8-bit subtractor                                      : 9
+# Counters                                             : 4
+ 10-bit down counter                                   : 1
+ 10-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 64-bit up counter                                     : 1
+# Registers                                            : 376
+ 1-bit register                                        : 296
+ 16-bit register                                       : 2
+ 2-bit register                                        : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 3
+ 6-bit register                                        : 2
+ 64-bit register                                       : 1
+ 8-bit register                                        : 70
+# Comparators                                          : 13
+ 4-bit comparator greater                              : 2
+ 64-bit comparator equal                               : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greatequal                           : 8
+ 8-bit comparator less                                 : 1
+# Multiplexers                                         : 57
+ 1-bit 4-to-1 multiplexer                              : 47
+ 16-bit 4-to-1 multiplexer                             : 1
+ 3-bit 4-to-1 multiplexer                              : 2
+ 8-bit 16-to-1 multiplexer                             : 3
+ 8-bit 4-to-1 multiplexer                              : 4
+# Xors                                                 : 9
+ 1-bit xor2                                            : 8
+ 1-bit xor8                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <XLXI_15/state/FSM> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 110
+ 100   | 010
+-------------------
+WARNING:Xst:1293 - FF/Latch <out_P3_7> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_P3_6> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_P3_5> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_P3_4> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_P3_3> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_P3_2> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <out_P3_1> has a constant value of 0 in block <XLXI_15>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <s_t1ff0> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <s_t0ff0> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <s_int0_sync_0> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <s_int1_sync_0> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t1ff1> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t0ff1> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_int0_sync_1> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_int1_sync_1> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t0ff2> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t1ff2> (without init value) has a constant value of 0 in block <gen_mc8051_tmrctr[0].i_mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <register_1> of sequential type is unconnected in block <XLXI_14>.
+WARNING:Xst:2677 - Node <register_2> of sequential type is unconnected in block <XLXI_14>.
+WARNING:Xst:2677 - Node <register_3> of sequential type is unconnected in block <XLXI_14>.
+WARNING:Xst:2677 - Node <register_4> of sequential type is unconnected in block <XLXI_14>.
+WARNING:Xst:2677 - Node <register_5> of sequential type is unconnected in block <XLXI_14>.
+WARNING:Xst:2677 - Node <register_6> of sequential type is unconnected in block <XLXI_14>.
+WARNING:Xst:2677 - Node <register_7> of sequential type is unconnected in block <XLXI_14>.
+
+Synthesizing (advanced) Unit <LUT_RAM_from_template>.
+INFO:Xst:3226 - The RAM <Mram_RAMDATA> will be implemented as a BLOCK RAM, absorbing the following register(s): <DOUT>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 8-bit                    |          |
+    |     mode           | no-change                           |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <WE>            | high     |
+    |     addrA          | connected to signal <ADDR>          |          |
+    |     diA            | connected to signal <DIN>           |          |
+    |     doA            | connected to signal <DOUT>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <LUT_RAM_from_template> synthesized (advanced).
+WARNING:Xst:2677 - Node <register_1> of sequential type is unconnected in block <ConfigRegister>.
+WARNING:Xst:2677 - Node <register_2> of sequential type is unconnected in block <ConfigRegister>.
+WARNING:Xst:2677 - Node <register_3> of sequential type is unconnected in block <ConfigRegister>.
+WARNING:Xst:2677 - Node <register_4> of sequential type is unconnected in block <ConfigRegister>.
+WARNING:Xst:2677 - Node <register_5> of sequential type is unconnected in block <ConfigRegister>.
+WARNING:Xst:2677 - Node <register_6> of sequential type is unconnected in block <ConfigRegister>.
+WARNING:Xst:2677 - Node <register_7> of sequential type is unconnected in block <ConfigRegister>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 128x8-bit single-port block RAM                       : 1
+# ROMs                                                 : 1
+ 32x4-bit ROM                                          : 1
+# Multipliers                                          : 1
+ 8x8-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 31
+ 1-bit subtractor                                      : 1
+ 16-bit adder                                          : 6
+ 2-bit subtractor                                      : 1
+ 3-bit addsub                                          : 1
+ 3-bit subtractor                                      : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 4
+ 5-bit subtractor                                      : 2
+ 6-bit adder                                           : 2
+ 6-bit addsub                                          : 1
+ 6-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 5
+ 8-bit subtractor                                      : 2
+# Counters                                             : 4
+ 10-bit down counter                                   : 1
+ 10-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 64-bit up counter                                     : 1
+# Registers                                            : 966
+ Flip-Flops                                            : 966
+# Comparators                                          : 13
+ 4-bit comparator greater                              : 2
+ 64-bit comparator equal                               : 1
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greatequal                           : 8
+ 8-bit comparator less                                 : 1
+# Multiplexers                                         : 57
+ 1-bit 4-to-1 multiplexer                              : 47
+ 16-bit 4-to-1 multiplexer                             : 1
+ 3-bit 4-to-1 multiplexer                              : 2
+ 8-bit 16-to-1 multiplexer                             : 3
+ 8-bit 4-to-1 multiplexer                              : 4
+# Xors                                                 : 9
+ 1-bit xor2                                            : 8
+ 1-bit xor8                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <out_P3_1> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_P3_2> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_P3_3> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_P3_4> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_P3_5> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_P3_6> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <out_P3_7> has a constant value of 0 in block <StateMachine>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <s_int1_sync_0> in Unit <mc8051_tmrctr> is equivalent to the following FF/Latch, which will be removed : <s_int0_sync_0> 
+INFO:Xst:2261 - The FF/Latch <s_int0_h1_0> in Unit <control_mem> is equivalent to the following 6 FFs/Latches, which will be removed : <s_p1_2> <s_p1_3> <s_p1_4> <s_p1_5> <s_p1_6> <s_p1_7> 
+WARNING:Xst:1710 - FF/Latch <s_int1_sync_0> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t0ff0> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t1ff0> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_int1_sync_1> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_int0_sync_1> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t0ff1> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t1ff1> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t0ff2> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_t1ff2> (without init value) has a constant value of 0 in block <mc8051_tmrctr>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <top> ...
+
+Optimizing unit <control_fsm> ...
+
+Optimizing unit <StateMachine> ...
+
+Optimizing unit <Mask> ...
+
+Optimizing unit <PrevRegsiter> ...
+
+Optimizing unit <mc8051_siu> ...
+
+Optimizing unit <mc8051_tmrctr> ...
+
+Optimizing unit <alumux> ...
+
+Optimizing unit <alucore> ...
+
+Optimizing unit <comb_divider> ...
+
+Optimizing unit <dcml_adjust> ...
+
+Optimizing unit <addsub_ovcy> ...
+
+Optimizing unit <BRAM4kx8> ...
+
+Optimizing unit <Trigger> ...
+
+Optimizing unit <control_mem> ...
+
+Optimizing unit <Capture> ...
+WARNING:Xst:2677 - Node <XLXI_1/gen_mc8051_siu[0].i_mc8051_siu/rxdwr_o> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/gen_mc8051_siu[0].i_mc8051_siu/rxd_o> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p1_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p1_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p1_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p1_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <XLXI_1/i_mc8051_control/i_control_mem/p1_3> of sequential type is unconnected in block <top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <XLXI_1/i_mc8051_control/i_control_mem/s_p3_7> in Unit <top> is equivalent to the following 7 FFs/Latches, which will be removed : <XLXI_1/i_mc8051_control/i_control_mem/s_p3_6> <XLXI_1/i_mc8051_control/i_control_mem/s_p3_5> <XLXI_1/i_mc8051_control/i_control_mem/s_p3_4> <XLXI_1/i_mc8051_control/i_control_mem/s_p3_3> <XLXI_1/i_mc8051_control/i_control_mem/s_p3_2> <XLXI_1/i_mc8051_control/i_control_mem/s_p3_1> <XLXI_1/i_mc8051_control/i_control_mem/s_int0_h1_0> 
+INFO:Xst:2261 - The FF/Latch <XLXI_1/gen_mc8051_siu[0].i_mc8051_siu/s_ff0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <XLXI_1/i_mc8051_control/i_control_mem/s_tf1_h1_0> 
+INFO:Xst:2261 - The FF/Latch <XLXI_1/gen_mc8051_siu[0].i_mc8051_siu/s_ff1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <XLXI_1/i_mc8051_control/i_control_mem/s_tf1_h2_0> 
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 45.
+FlipFlop XLXI_1/i_mc8051_control/i_control_mem/state_0 has been replicated 1 time(s)
+FlipFlop XLXI_1/i_mc8051_control/i_control_mem/state_1 has been replicated 1 time(s)
+FlipFlop XLXI_1/i_mc8051_control/i_control_mem/state_2 has been replicated 1 time(s)
+FlipFlop XLXI_11/select has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1014
+ Flip-Flops                                            : 1014
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 5276
+#      AND2                        : 1
+#      GND                         : 1
+#      INV                         : 17
+#      LUT1                        : 132
+#      LUT2                        : 176
+#      LUT2_D                      : 14
+#      LUT2_L                      : 11
+#      LUT3                        : 772
+#      LUT3_D                      : 62
+#      LUT3_L                      : 23
+#      LUT4                        : 2504
+#      LUT4_D                      : 226
+#      LUT4_L                      : 371
+#      MUXCY                       : 266
+#      MUXF5                       : 440
+#      MUXF6                       : 32
+#      MUXF7                       : 16
+#      OR2                         : 1
+#      VCC                         : 1
+#      XORCY                       : 210
+# FlipFlops/Latches                : 1014
+#      FD                          : 131
+#      FDC                         : 347
+#      FDCE                        : 146
+#      FDE                         : 321
+#      FDP                         : 45
+#      FDRE                        : 10
+#      FDRS                        : 1
+#      FDS                         : 3
+#      FDSE                        : 10
+# RAMS                             : 7
+#      RAMB16_S18                  : 4
+#      RAMB16_S9                   : 3
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 13
+#      IBUF                        : 2
+#      IBUFG                       : 1
+#      OBUF                        : 10
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                     2232  out of   4656    47%  
+ Number of Slice Flip Flops:           1014  out of   9312    10%  
+ Number of 4 input LUTs:               4308  out of   9312    46%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    232     5%  
+ Number of BRAMs:                         7  out of     20    35%  
+ Number of MULT18X18SIOs:                 1  out of     20     5%  
+ Number of GCLKs:                         2  out of     24     8%  
+ Number of DCMs:                          1  out of      4    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)    | Load  |
+-----------------------------------+--------------------------+-------+
+clkin                              | XLXI_12/DCM_SP_INST:CLKDV| 1021  |
+-----------------------------------+--------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+resetin                            | IBUF                   | 538   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 10.719ns (Maximum Frequency: 93.288MHz)
+   Minimum input arrival time before clock: 5.332ns
+   Maximum output required time after clock: 47.056ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clkin'
+  Clock period: 10.719ns (frequency: 93.288MHz)
+  Total number of paths / destination ports: 10366080745783748 / 1671
+-------------------------------------------------------------------------
+Delay:               48.238ns (Levels of Logic = 61)
+  Source:            XLXI_11/ROM2k_00 (RAM)
+  Destination:       XLXI_1/i_mc8051_control/i_control_mem/p0_1 (FF)
+  Source Clock:      clkin rising 0.2X
+  Destination Clock: clkin rising 0.2X
+
+  Data Path: XLXI_11/ROM2k_00 to XLXI_1/i_mc8051_control/i_control_mem/p0_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S9:CLK->DO7   14   2.436   0.919  XLXI_11/ROM2k_00 (XLXI_11/Dout_00<7>)
+     LUT3:I1->O           18   0.612   0.938  XLXI_11/Dout<7>1 (ROMdata<7>)
+     LUT4:I2->O           24   0.612   1.094  XLXI_1/i_mc8051_control/i_control_fsm/s_instr_category<29>11 (XLXI_1/i_mc8051_control/i_control_fsm/N149)
+     LUT4:I2->O            1   0.612   0.387  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<3>121_SW0_SW0 (N2311)
+     LUT4:I2->O            6   0.612   0.599  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<3>121 (XLXI_1/i_mc8051_control/i_control_fsm/N80)
+     LUT4:I2->O            1   0.612   0.000  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<4>28_SW0_SW0_F (N3366)
+     MUXF5:I0->O           3   0.278   0.481  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<4>28_SW0_SW0 (N2896)
+     LUT4_L:I2->LO         1   0.612   0.130  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<4>28_SW0 (N2901)
+     LUT4:I2->O            2   0.612   0.449  XLXI_1/i_mc8051_alu/i_alumux/dvdnd_o_cmp_eq00001_SW4 (N1038)
+     LUT4_L:I1->LO         1   0.612   0.169  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/qutnt_o<7>235_SW1_SW0 (N2973)
+     LUT4:I1->O            3   0.612   0.481  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_7_mux00001_SW0_SW0 (N2914)
+     LUT4:I2->O            1   0.612   0.387  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/qutnt_o<6>253_SW0 (N2985)
+     LUT4_D:I2->LO         1   0.612   0.103  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/qutnt_o<6>253 (N4290)
+     LUT4:I3->O            2   0.612   0.380  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<3>)
+     MUXCY:CI->O          11   0.399   0.862  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<4> (XLXI_1/i_mc8051_alu/s_qutnt<5>)
+     LUT3:I1->O            4   0.612   0.499  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux00011 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux0001)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<3>)
+     MUXCY:CI->O          13   0.399   0.839  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<4> (XLXI_1/i_mc8051_alu/s_qutnt<4>)
+     LUT4:I3->O            3   0.612   0.451  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_4_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_4_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<4>)
+     MUXCY:CI->O          16   0.399   0.882  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<5> (XLXI_1/i_mc8051_alu/s_qutnt<3>)
+     LUT4:I3->O            3   0.612   0.451  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_3_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_3_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<5> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<5>)
+     MUXCY:CI->O          19   0.399   0.925  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<6> (XLXI_1/i_mc8051_alu/s_qutnt<2>)
+     LUT4:I3->O            3   0.612   0.451  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_2_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_2_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<5> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<6> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<6>)
+     MUXCY:CI->O          22   0.399   0.992  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<7> (XLXI_1/i_mc8051_alu/s_qutnt<1>)
+     LUT4:I3->O            1   0.612   0.357  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_1_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_1_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<5> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<6> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<6>)
+     MUXCY:CI->O          20   0.399   1.089  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<7> (XLXI_1/i_mc8051_alu/s_qutnt<0>)
+     LUT4:I0->O           13   0.612   0.905  XLXI_1/i_mc8051_control/i_control_fsm/s_adr_mux<3>1237 (XLXI_1/i_mc8051_control/i_control_fsm/N63)
+     LUT4:I1->O           23   0.612   1.091  XLXI_1/i_mc8051_control/i_control_fsm/s_adr_mux<0>81 (XLXI_1/i_mc8051_control/s_adr_mux<0>)
+     LUT4:I1->O            1   0.612   0.426  XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr_8_f5_SW1 (N980)
+     LUT3:I1->O            1   0.612   0.000  XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr_2_f5_F (N3140)
+     MUXF5:I0->O         121   0.278   1.249  XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr_2_f5 (ram_addr<1>)
+     LUT2_D:I0->O         13   0.612   0.839  XLXI_1/i_mc8051_control/i_control_mem/s_wt_0_mux0000<1>21_1 (XLXI_1/i_mc8051_control/i_control_mem/s_wt_0_mux0000<1>21)
+     LUT4_D:I3->O         13   0.612   0.866  XLXI_1/i_mc8051_control/i_control_mem/p0_0_cmp_eq0000111 (XLXI_1/i_mc8051_control/i_control_mem/N522)
+     LUT4:I2->O            1   0.612   0.000  XLXI_1/i_mc8051_control/i_control_mem/p0_0_mux000011_F (N3118)
+     MUXF5:I0->O           8   0.278   0.643  XLXI_1/i_mc8051_control/i_control_mem/p0_0_mux000011 (XLXI_1/i_mc8051_control/i_control_mem/N275)
+     MUXF5:S->O            1   0.641   0.360  XLXI_1/i_mc8051_control/i_control_mem/p0_1_mux0000_SW0_SW0 (N1865)
+     LUT4:I3->O            1   0.612   0.000  XLXI_1/i_mc8051_control/i_control_mem/p0_1_mux0000 (XLXI_1/i_mc8051_control/i_control_mem/p0_1_mux0000)
+     FDP:D                     0.268          XLXI_1/i_mc8051_control/i_control_mem/p0_1
+    ----------------------------------------
+    Total                     48.238ns (27.544ns logic, 20.694ns route)
+                                       (57.1% logic, 42.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clkin'
+  Total number of paths / destination ports: 7 / 5
+-------------------------------------------------------------------------
+Offset:              5.332ns (Levels of Logic = 3)
+  Source:            resetin (PAD)
+  Destination:       XLXI_8/Mram_RAMDATA (RAM)
+  Destination Clock: clkin rising 0.2X
+
+  Data Path: resetin to XLXI_8/Mram_RAMDATA
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           539   1.106   1.199  resetin_IBUF (resetin_IBUF)
+     INV:I->O              1   0.612   0.357  XLXI_1/i_mc8051_control/i_control_mem/ram_en_o1_INV_0 (XLXN_10)
+     AND2:I0->O            1   0.612   0.357  XLXI_5 (XLXN_17)
+     RAMB16_S9:WE              1.090          XLXI_8/Mram_RAMDATA
+    ----------------------------------------
+    Total                      5.332ns (3.420ns logic, 1.913ns route)
+                                       (64.1% logic, 35.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clkin'
+  Total number of paths / destination ports: 6148874392681 / 3
+-------------------------------------------------------------------------
+Offset:              47.056ns (Levels of Logic = 58)
+  Source:            XLXI_11/ROM2k_00 (RAM)
+  Destination:       Idle_out (PAD)
+  Source Clock:      clkin rising 0.2X
+
+  Data Path: XLXI_11/ROM2k_00 to Idle_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S9:CLK->DO7   14   2.436   0.919  XLXI_11/ROM2k_00 (XLXI_11/Dout_00<7>)
+     LUT3:I1->O           18   0.612   0.938  XLXI_11/Dout<7>1 (ROMdata<7>)
+     LUT4:I2->O           24   0.612   1.094  XLXI_1/i_mc8051_control/i_control_fsm/s_instr_category<29>11 (XLXI_1/i_mc8051_control/i_control_fsm/N149)
+     LUT4:I2->O            1   0.612   0.387  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<3>121_SW0_SW0 (N2311)
+     LUT4:I2->O            6   0.612   0.599  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<3>121 (XLXI_1/i_mc8051_control/i_control_fsm/N80)
+     LUT4:I2->O            1   0.612   0.000  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<4>28_SW0_SW0_F (N3366)
+     MUXF5:I0->O           3   0.278   0.481  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<4>28_SW0_SW0 (N2896)
+     LUT4_L:I2->LO         1   0.612   0.130  XLXI_1/i_mc8051_control/i_control_fsm/alu_cmd_o<4>28_SW0 (N2901)
+     LUT4:I2->O            2   0.612   0.449  XLXI_1/i_mc8051_alu/i_alumux/dvdnd_o_cmp_eq00001_SW4 (N1038)
+     LUT4_L:I1->LO         1   0.612   0.169  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/qutnt_o<7>235_SW1_SW0 (N2973)
+     LUT4:I1->O            3   0.612   0.481  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_7_mux00001_SW0_SW0 (N2914)
+     LUT4:I2->O            1   0.612   0.387  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/qutnt_o<6>253_SW0 (N2985)
+     LUT4_D:I2->LO         1   0.612   0.103  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/qutnt_o<6>253 (N4290)
+     LUT4:I3->O            2   0.612   0.380  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<3>)
+     MUXCY:CI->O          11   0.399   0.862  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_5_cmp_ge0000_cy<4> (XLXI_1/i_mc8051_alu/s_qutnt<5>)
+     LUT3:I1->O            4   0.612   0.499  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux00011 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_6_mux0001)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<3>)
+     MUXCY:CI->O          13   0.399   0.839  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0000_cy<4> (XLXI_1/i_mc8051_alu/s_qutnt<4>)
+     LUT4:I3->O            3   0.612   0.451  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_4_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_4_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<4>)
+     MUXCY:CI->O          16   0.399   0.882  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0001_cy<5> (XLXI_1/i_mc8051_alu/s_qutnt<3>)
+     LUT4:I3->O            3   0.612   0.451  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_3_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_3_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<5> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<5>)
+     MUXCY:CI->O          19   0.399   0.925  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0002_cy<6> (XLXI_1/i_mc8051_alu/s_qutnt<2>)
+     LUT4:I3->O            3   0.612   0.451  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_2_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_2_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<5> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<6> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<6>)
+     MUXCY:CI->O          22   0.399   0.992  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_actl_dvdnd_7_cmp_ge0003_cy<7> (XLXI_1/i_mc8051_alu/s_qutnt<1>)
+     LUT4:I3->O            1   0.612   0.357  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_1_mux00001 (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/v_actl_dvdnd_1_mux0000)
+     MUXCY:DI->O           1   0.773   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<1> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<2> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<3> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<4> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<5> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<6> (XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<6>)
+     MUXCY:CI->O          20   0.399   1.089  XLXI_1/i_mc8051_alu/gen_divider1.i_comb_divider/Mcompar_v_qutnt_0_cmp_ge0000_cy<7> (XLXI_1/i_mc8051_alu/s_qutnt<0>)
+     LUT4:I0->O           13   0.612   0.905  XLXI_1/i_mc8051_control/i_control_fsm/s_adr_mux<3>1237 (XLXI_1/i_mc8051_control/i_control_fsm/N63)
+     LUT4:I1->O           17   0.612   0.962  XLXI_1/i_mc8051_control/i_control_fsm/s_adr_mux<3>127 (XLXI_1/i_mc8051_control/s_adr_mux<3>)
+     LUT4:I1->O            1   0.612   0.426  XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr1477 (XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr1477)
+     LUT4_D:I1->LO         1   0.612   0.103  XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr1492 (N4124)
+     LUT4:I3->O          143   0.612   1.106  XLXI_1/i_mc8051_control/i_control_mem/Mmux_s_adr14349 (ram_addr<3>)
+     LUT4_D:I3->LO         1   0.612   0.103  XLXI_1/i_mc8051_control/i_control_mem/mux0116_cmp_eq00011_1 (N4328)
+     LUT4:I3->O            4   0.612   0.499  XLXI_13/out_idle1 (Idle_out_OBUF)
+     OBUF:I->O                 3.169          Idle_out_OBUF (Idle_out)
+    ----------------------------------------
+    Total                     47.056ns (28.636ns logic, 18.420ns route)
+                                       (60.9% logic, 39.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 71.00 secs
+Total CPU time to Xst completion: 71.49 secs
+ 
+--> 
+
+Total memory usage is 438296 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  102 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
+

@@ -1,0 +1,189 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : top.vf
+// /___/   /\     Timestamp : 05/07/2015 15:11:37
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan3e -verilog C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/top.vf -w C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/top.sch
+//Design Name: top
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module top(clkin, 
+           resetin, 
+           RXDin, 
+           Idle_out, 
+           P3_out, 
+           TXDout);
+
+    input clkin;
+    input resetin;
+    input [0:0] RXDin;
+   output Idle_out;
+   output [7:0] P3_out;
+   output [0:0] TXDout;
+   
+   wire clk10mHz;
+   wire [6:0] ram_addr;
+   wire [7:0] ram_datain;
+   wire [7:0] ram_dataout;
+   wire [15:0] ROMaddr;
+   wire [7:0] ROMdata;
+   wire XLXN_9;
+   wire XLXN_10;
+   wire XLXN_17;
+   wire XLXN_19;
+   wire [7:0] XLXN_20;
+   wire XLXN_24;
+   wire XLXN_26;
+   wire [63:0] XLXN_29;
+   wire [63:0] XLXN_30;
+   wire [63:0] XLXN_31;
+   wire [63:0] XLXN_32;
+   wire [63:0] XLXN_33;
+   wire [63:0] XLXN_37;
+   wire XLXN_39;
+   wire [7:0] XLXN_46;
+   wire [7:0] XLXN_47;
+   wire [7:0] XLXN_48;
+   wire [7:0] XLXN_49;
+   wire [63:0] XLXN_53;
+   wire XLXN_71;
+   wire [7:0] XLXN_73;
+   wire XLXN_76;
+   wire XLXN_77;
+   wire XLXN_83;
+   wire [7:0] XLXN_84;
+   wire [7:0] XLXN_85;
+   wire [7:0] P3_out_DUMMY;
+   wire Idle_out_DUMMY;
+   
+   assign Idle_out = Idle_out_DUMMY;
+   assign P3_out[7:0] = P3_out_DUMMY[7:0];
+   mc8051_core  XLXI_1 (.all_rxd_i(RXDin[0]), 
+                       .all_t0_i(), 
+                       .all_t1_i(), 
+                       .clk(clk10mHz), 
+                       .datax_i(), 
+                       .int0_i(), 
+                       .int1_i(), 
+                       .p0_i(XLXN_84[7:0]), 
+                       .p1_i(XLXN_85[7:0]), 
+                       .p2_i(XLXN_46[7:0]), 
+                       .p3_i(P3_out_DUMMY[7:0]), 
+                       .ram_data_i(ram_dataout[7:0]), 
+                       .reset(resetin), 
+                       .rom_data_i(ROMdata[7:0]), 
+                       .adrx_o(), 
+                       .all_rxdwr_o(), 
+                       .all_rxd_o(), 
+                       .all_txd_o(TXDout[0]), 
+                       .datax_o(), 
+                       .p0_o(XLXN_20[7:0]), 
+                       .p1_o(XLXN_73[7:0]), 
+                       .p2_o(XLXN_49[7:0]), 
+                       .p3_o(), 
+                       .ram_adr_o(ram_addr[6:0]), 
+                       .ram_data_o(ram_datain[7:0]), 
+                       .ram_en_o(XLXN_10), 
+                       .ram_wr_o(XLXN_9), 
+                       .rom_adr_o(ROMaddr[15:0]), 
+                       .wrx_o());
+   AND2  XLXI_5 (.I0(XLXN_10), 
+                .I1(XLXN_9), 
+                .O(XLXN_17));
+   LUT_RAM_from_template  XLXI_8 (.ADDR(ram_addr[6:0]), 
+                                 .CLK(clk10mHz), 
+                                 .DIN(ram_datain[7:0]), 
+                                 .WE(XLXN_17), 
+                                 .DOUT(ram_dataout[7:0]));
+   BRAM4kx8  XLXI_11 (.Addr(ROMaddr[11:0]), 
+                     .clkin(clk10mHz), 
+                     .Dout(ROMdata[7:0]));
+   wiz_clkgen  XLXI_12 (.CLKIN_IN(clkin), 
+                       .RST_IN(resetin), 
+                       .CLKDV_OUT(clk10mHz), 
+                       .CLKIN_IBUFG_OUT(), 
+                       .CLK0_OUT(), 
+                       .LOCKED_OUT());
+   MMIOC  XLXI_13 (.in_addr(ram_addr[6:0]), 
+                  .in_clk(clk10mHz), 
+                  .in_we(XLXN_17), 
+                  .out_idle(Idle_out_DUMMY), 
+                  .out_reset(XLXN_77), 
+                  .out_unidle(XLXN_71), 
+                  .out_we_ca(), 
+                  .out_we_cr(XLXN_19), 
+                  .out_we_mm(XLXN_26));
+   ConfigRegister  XLXI_14 (.in_clk(clk10mHz), 
+                           .in_P0(XLXN_20[7:0]), 
+                           .in_we(XLXN_19), 
+                           .out_bit_0(XLXN_24));
+   StateMachine  XLXI_15 (.in_clk(clk10mHz), 
+                         .in_idle(Idle_out_DUMMY), 
+                         .in_prePost(XLXN_24), 
+                         .in_reset(XLXN_77), 
+                         .in_trig(XLXN_39), 
+                         .in_unidle(XLXN_71), 
+                         .out_ce(XLXN_76), 
+                         .out_P3(P3_out_DUMMY[7:0]));
+   Mask  XLXI_17 (.in_clk(clk10mHz), 
+                 .in_P0(XLXN_20[7:0]), 
+                 .in_P1(XLXN_73[7:0]), 
+                 .in_P2(XLXN_49[7:0]), 
+                 .in_we(XLXN_26), 
+                 .out_mask_0(XLXN_29[63:0]), 
+                 .out_mask_1(XLXN_30[63:0]), 
+                 .out_mask_2(XLXN_31[63:0]), 
+                 .out_mask_3(XLXN_32[63:0]), 
+                 .out_mask_4(XLXN_33[63:0]));
+   Trigger  XLXI_18 (.in_clk(clk10mHz), 
+                    .in_data(XLXN_53[63:0]), 
+                    .in_mask_0(XLXN_29[63:0]), 
+                    .in_mask_1(XLXN_30[63:0]), 
+                    .in_mask_2(XLXN_31[63:0]), 
+                    .in_mask_3(XLXN_32[63:0]), 
+                    .in_mask_4(XLXN_33[63:0]), 
+                    .in_prev(XLXN_37[63:0]), 
+                    .out_trig(XLXN_39));
+   PrevRegsiter  XLXI_19 (.in_clk(clk10mHz), 
+                         .in_data(XLXN_53[63:0]), 
+                         .out_data(XLXN_37[63:0]));
+   AutoIncrementRegister  XLXI_20 (.in_ce(XLXN_76), 
+                                  .in_clk(clk10mHz), 
+                                  .in_P0(), 
+                                  .in_P1(), 
+                                  .in_reset(XLXN_83), 
+                                  .out_P0(XLXN_84[7:0]), 
+                                  .out_P1(XLXN_85[7:0]));
+   CaptureAddress  XLXI_21 (.in_ce(XLXN_76), 
+                           .in_P0_ce(XLXN_84[7:0]), 
+                           .in_P0_we(XLXN_20[7:0]), 
+                           .in_P1_ce(XLXN_85[7:0]), 
+                           .in_P1_we(XLXN_73[7:0]), 
+                           .out_P0(XLXN_47[7:0]), 
+                           .out_P1(XLXN_48[7:0]));
+   Capture  XLXI_22 (.in_ce(XLXN_76), 
+                    .in_clk(clk10mHz), 
+                    .in_data(XLXN_53[63:0]), 
+                    .in_P0(XLXN_47[7:0]), 
+                    .in_P1(XLXN_48[7:0]), 
+                    .in_P2(XLXN_49[7:0]), 
+                    .out_P0(XLXN_46[7:0]));
+   SampleInput  XLXI_23 (.in_clk(clk10mHz), 
+                        .data(XLXN_53[63:0]));
+   OR2  XLXI_24 (.I0(XLXN_77), 
+                .I1(Idle_out_DUMMY), 
+                .O(XLXN_83));
+endmodule

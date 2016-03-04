@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/xst"
+elaborate
+-ifn MMIOC.prj
+-ifmt mixed

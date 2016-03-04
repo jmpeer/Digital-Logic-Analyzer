@@ -1,0 +1,6 @@
+vhdtdtfi -lib work {C:/Users/jmpeer/Desktop/Lab4/8051_logic/Verilog Modules/SampleInput.v} -lang verilog -prj my8051 -o SampleInput.spl -module SampleInput -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SampleInput.spl C:/Users/jmpeer/Desktop/Lab4/8051_logic/SampleInput.sym 
+vhdtdtfi -lib work {C:/Users/jmpeer/Desktop/Lab4/8051_logic/Verilog Modules/SampleInput.v} -lang verilog -prj my8051 -o SampleInput.spl -module SampleInput -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SampleInput.spl C:/Users/jmpeer/Desktop/Lab4/8051_logic/SampleInput.sym 
+vhdtdtfi -lib work {C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/Verilog Modules/SampleInput.v} -lang verilog -prj my8051 -o SampleInput.spl -module SampleInput -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SampleInput.spl C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/SampleInput.sym 

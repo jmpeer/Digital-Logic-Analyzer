@@ -1,0 +1,4 @@
+vhdtdtfi -lib work {C:/Users/jmpeer/Desktop/Lab 4, Day 5/8051_logic/Verilog Modules/StateMachine.v} -lang verilog -prj my8051 -o StateMachine.spl -module StateMachine -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e StateMachine.spl {C:/Users/jmpeer/Desktop/Lab 4, Day 5/8051_logic/StateMachine.sym} 
+vhdtdtfi -lib work {C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/Verilog Modules/StateMachine.v} -lang verilog -prj my8051 -o StateMachine.spl -module StateMachine -template C:/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e StateMachine.spl C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/StateMachine.sym 

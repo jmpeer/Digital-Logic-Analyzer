@@ -1,0 +1,43 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Verilog Modules/BRAM_16x1K.v" in library work
+Compiling verilog file "Verilog Modules/BRAM_32x1K.v" in library work
+Module <BRAM_16x1K> compiled
+Compiling verilog file "Verilog Modules/BRAM_64x1K.v" in library work
+Module <BRAM_32x1K> compiled
+Compiling verilog file "Verilog Modules/Capture.v" in library work
+Module <BRAM_64x1K> compiled
+Module <Capture> compiled
+No errors in compilation
+Analysis of file <"Capture.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+
+Total memory usage is 213188 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

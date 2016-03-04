@@ -1,0 +1,8 @@
+[Inputs]
+in_clk
+[Outputs]
+=data[63:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel SampleInput
+

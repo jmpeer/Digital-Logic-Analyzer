@@ -1,0 +1,53 @@
+EN addsub_core NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_.vhd sub00/vhpl10 1432069034
+EN mc8051_core NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_.vhd sub00/vhpl15 1432069039
+MO MMIOC NULL "Verilog Modules/MMIOC.v" vlg05/_m_m_i_o_c.bin 1432069024
+AR alumux rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_rtl.vhd sub00/vhpl23 1432069047
+MO StateMachine NULL "Verilog Modules/StateMachine.v" vlg06/_state_machine.bin 1432069024
+MO AutoIncrementRegister NULL "Verilog Modules/AutoIncrementRegister.v" vlg53/_auto_increment_register.bin 1432069024
+MO Trigger_0 NULL "Verilog Modules/Trigger.v" vlg57/_trigger__0.bin 1432069024
+MO Trigger_1 NULL "Verilog Modules/Trigger.v" vlg58/_trigger__1.bin 1432069024
+MO Trigger_2 NULL "Verilog Modules/Trigger.v" vlg59/_trigger__2.bin 1432069024
+MO Trigger_3 NULL "Verilog Modules/Trigger.v" vlg5A/_trigger__3.bin 1432069024
+MO Trigger_4 NULL "Verilog Modules/Trigger.v" vlg5B/_trigger__4.bin 1432069024
+PH mc8051_p NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_p.vhd sub00/vhpl00 1432069024
+EN control_mem NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_.vhd sub00/vhpl04 1432069028
+MO ConfigRegister NULL "Verilog Modules/ConfigRegister.v" vlg47/_config_register.bin 1432069024
+MO Capture NULL "Verilog Modules/Capture.v" vlg10/_capture.bin 1432069024
+EN mc8051_tmrctr NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_.vhd sub00/vhpl11 1432069035
+AR comb_mltplr rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_rtl.vhd sub00/vhpl25 1432069049
+AR comb_divider rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_rtl.vhd sub00/vhpl24 1432069048
+AR mc8051_core struc C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_struc.vhd sub00/vhpl16 1432069040
+MO BRAM_32x1K NULL "Verilog Modules/BRAM_32x1K.v" vlg4E/_b_r_a_m__32x1_k.bin 1432069024
+AR alucore rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_rtl.vhd sub00/vhpl22 1432069046
+AR control_fsm rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_rtl.vhd sub00/vhpl26 1432069050
+MO BRAM_64x1K NULL "Verilog Modules/BRAM_64x1K.v" vlg1B/_b_r_a_m__64x1_k.bin 1432069024
+AR mc8051_control struc C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_struc.vhd sub00/vhpl18 1432069042
+EN mc8051_alu NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_.vhd sub00/vhpl14 1432069038
+MO LUT_RAM_from_template NULL LUT_RAM_from_template02.v vlg12/_l_u_t___r_a_m__from__template.bin 1432069024
+AR control_mem rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd sub00/vhpl27 1432069051
+EN addsub_ovcy NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_.vhd sub00/vhpl01 1432069025
+AR mc8051_tmrctr rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_rtl.vhd sub00/vhpl20 1432069044
+MO BRAM_16x1K NULL "Verilog Modules/BRAM_16x1K.v" vlg60/_b_r_a_m__16x1_k.bin 1432069024
+MO top NULL top.vf vlg6F/top.bin 1432069024
+EN addsub_cy NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_.vhd sub00/vhpl02 1432069026
+AR dcml_adjust rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_rtl.vhd sub00/vhpl28 1432069052
+EN alucore NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_.vhd sub00/vhpl09 1432069033
+MO PrevRegsiter NULL "Verilog Modules/PrevRegister.v" vlg12/_prev_regsiter.bin 1432069024
+EN comb_mltplr NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_.vhd sub00/vhpl06 1432069030
+EN mc8051_siu NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_.vhd sub00/vhpl12 1432069036
+AR mc8051_siu rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_rtl.vhd sub00/vhpl19 1432069043
+EN control_fsm NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_.vhd sub00/vhpl05 1432069029
+MO SampleInput NULL "Verilog Modules/SampleInput.v" vlg4E/_sample_input.bin 1432069024
+AR mc8051_alu struc C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_struc.vhd sub00/vhpl17 1432069041
+MO Trigger NULL "Verilog Modules/Trigger.v" vlg2C/_trigger.bin 1432069024
+MO BRAM4kx8 NULL BRAM4kx8.v vlg55/_b_r_a_m4kx8.bin 1432069024
+AR addsub_core struc C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_struc.vhd sub00/vhpl21 1432069045
+AR addsub_ovcy rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_rtl.vhd sub00/vhpl30 1432069054
+EN comb_divider NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_.vhd sub00/vhpl07 1432069031
+EN mc8051_control NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_.vhd sub00/vhpl13 1432069037
+MO CaptureAddress NULL "Verilog Modules/CaptureAddress.v" vlg2A/_capture_address.bin 1432069024
+EN alumux NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_.vhd sub00/vhpl08 1432069032
+EN dcml_adjust NULL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_.vhd sub00/vhpl03 1432069027
+AR addsub_cy rtl C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_rtl.vhd sub00/vhpl29 1432069053
+MO wiz_clkgen NULL wiz_clkgen.v vlg65/wiz__clkgen.bin 1432069024
+MO Mask NULL "Verilog Modules/Mask.v" vlg3C/_mask.bin 1432069024

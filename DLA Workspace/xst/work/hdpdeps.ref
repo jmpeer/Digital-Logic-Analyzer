@@ -1,0 +1,201 @@
+V3 157
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/addsub_core_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/addsub_core_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/addsub_cy_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/addsub_cy_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/addsub_ovcy_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/addsub_ovcy_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/alucore_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/alucore_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/alumux_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/alumux_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/comb_divider_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/comb_divider_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/comb_mltplr_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/comb_mltplr_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/control_fsm_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/control_fsm_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/control_mem_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/control_mem_rtl.vhd 2012/11/25.11:31:06 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/dcml_adjust_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/dcml_adjust_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_alu_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_alu_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_control_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_control_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_core_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_core_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_p.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_siu_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_siu_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_tmrctr_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/mc8051_tmrctr_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/addsub_core_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/addsub_core_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/addsub_cy_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/addsub_cy_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/addsub_ovcy_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/addsub_ovcy_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/alucore_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/alucore_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/alumux_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/alumux_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/comb_divider_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/comb_divider_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/comb_mltplr_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/comb_mltplr_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/control_fsm_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/control_fsm_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/control_mem_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/control_mem_rtl.vhd 2012/11/25.11:31:06 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/dcml_adjust_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/dcml_adjust_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_alu_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_alu_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_control_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_control_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_core_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_core_struc.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_p.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_siu_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_siu_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_tmrctr_.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/mc8051_tmrctr_rtl.vhd 2012/11/13.10:22:36 P.20131013
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/addsub_core 1432069034 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_struc.vhd 2012/11/13.10:22:36 P.20131013
+AR work/addsub_core/struc 1432069045 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_core_struc.vhd \
+      EN work/addsub_core 1432069034 CP addsub_ovcy CP addsub_cy
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/addsub_cy 1432069026 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/addsub_cy/rtl 1432069053 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_cy_rtl.vhd \
+      EN work/addsub_cy 1432069026
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/addsub_ovcy 1432069025 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/addsub_ovcy/rtl 1432069054 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/addsub_ovcy_rtl.vhd \
+      EN work/addsub_ovcy 1432069025
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/alucore 1432069033 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/alucore/rtl 1432069046 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alucore_rtl.vhd \
+      EN work/alucore 1432069033
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/alumux 1432069032 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/alumux/rtl 1432069047 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/alumux_rtl.vhd \
+      EN work/alumux 1432069032
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/comb_divider 1432069031 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/comb_divider/rtl 1432069048 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_divider_rtl.vhd \
+      EN work/comb_divider 1432069031
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/comb_mltplr 1432069030 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/comb_mltplr/rtl 1432069049 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/comb_mltplr_rtl.vhd \
+      EN work/comb_mltplr 1432069030
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/control_fsm 1432069029 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/control_fsm/rtl 1432069050 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_fsm_rtl.vhd \
+      EN work/control_fsm 1432069029
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/control_mem 1432069028 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd 2012/11/25.11:31:06 P.20131013
+AR work/control_mem/rtl 1432069051 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/control_mem_rtl.vhd \
+      EN work/control_mem 1432069028
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/dcml_adjust 1432069027 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/dcml_adjust/rtl 1432069052 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/dcml_adjust_rtl.vhd \
+      EN work/dcml_adjust 1432069027
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/mc8051_alu 1432069038 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_struc.vhd 2012/11/13.10:22:36 P.20131013
+AR work/mc8051_alu/struc 1432069041 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_alu_struc.vhd \
+      EN work/mc8051_alu 1432069038 CP alumux CP alucore CP addsub_core \
+      CP comb_mltplr CP comb_divider CP dcml_adjust
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/mc8051_control 1432069037 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_struc.vhd 2012/11/13.10:22:36 P.20131013
+AR work/mc8051_control/struc 1432069042 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_control_struc.vhd \
+      EN work/mc8051_control 1432069037 CP control_fsm CP control_mem
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/mc8051_core 1432069039 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PH work/mc8051_p 1432069024
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_struc.vhd 2012/11/13.10:22:36 P.20131013
+AR work/mc8051_core/struc 1432069040 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_core_struc.vhd \
+      EN work/mc8051_core 1432069039 CP mc8051_control CP mc8051_alu CP mc8051_siu \
+      CP mc8051_tmrctr
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_p.vhd 2012/11/13.10:22:36 P.20131013
+PH work/mc8051_p 1432069024 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_p.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      CD addsub_cy CD addsub_ovcy CD addsub_core CD alucore CD comb_divider \
+      CD comb_mltplr CD dcml_adjust CD alumux CD mc8051_alu CD mc8051_siu \
+      CD mc8051_tmrctr CD control_fsm CD control_mem CD mc8051_control \
+      CD mc8051_core CD mc8051_top CD mc8051_ram CD mc8051_ramx CD mc8051_rom
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/mc8051_siu 1432069036 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/mc8051_siu/rtl 1432069043 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_siu_rtl.vhd \
+      EN work/mc8051_siu 1432069036
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_.vhd 2012/11/13.10:22:36 P.20131013
+EN work/mc8051_tmrctr 1432069035 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_rtl.vhd 2012/11/13.10:22:36 P.20131013
+AR work/mc8051_tmrctr/rtl 1432069044 \
+      FL C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/mc8051_tmrctr_rtl.vhd \
+      EN work/mc8051_tmrctr 1432069035

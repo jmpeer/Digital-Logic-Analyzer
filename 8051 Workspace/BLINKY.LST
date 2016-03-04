@@ -1,0 +1,1143 @@
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 1   
+
+
+C51 COMPILER V9.53.0.0, COMPILATION OF MODULE BLINKY
+OBJECT MODULE PLACED IN BLINKY.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE BLINKY.C ROM(SMALL) OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND CODE TAB
+                    -S(2)
+
+line level    source
+
+   1          //Blinky.c wmh 2015-02-18 : generates 'Cylon' scan on port P1. Set delaycount (below) =3 for Xilinx simula
+             -tion, =10,000 to run on FPGA
+   2          //  - program outputs on port P1 and use registers R5 (=j) and R6:R7 (=i) (see BLINKY.LST)
+   3          //  - conversion of .hex to .memh format for initializing ROM definition in LUT_ROM3Kx8v01.v is performed 
+             -by hex2readmemh.exe
+   4          //    (see entry in Project > Options for Target > User) 
+   5          //  - todo -- update some registers in an .asm
+   6          // > Project > Options changes:
+   7          //    Target : Oregano Systems 8051 core
+   8          //    checked 'Use Onchip ROM (0x0-0xFFF)'   
+   9          
+  10          /* BLINKY.C - LED Flasher for the Keil MCBx51 Evaluation Board with 80C51 device*/
+  11                            
+  12          #include <REG51F.H>
+  13          
+  14          // When you have enabled the option Stop Program Execution with Serial
+  15          // Interrupt, the Monitor-51 uses the serial interrupt of the UART.
+  16          // It is therefore required to reserve the memory locations for the interrupt
+  17          // vector.  You can do this by adding one of the following code lines:
+  18          
+  19          // char code reserve [3] _at_ 0x23;   // when using on-chip UART for communication
+  20          // char code reserve [3] _at_  0x3;   // when using off-chip UART for communication
+  21          
+  22          #define DELAYCOUNT  100       //for hardware this was 10000; for simulation make it 3
+  23          
+  24            char pre_post_trigger='0'; // pre='0';post='1'
+  25            char hi_mask[8]={0};
+  26            char low_mask[8]={0};
+  27            char pos_edg_mask[8]={0};
+  28            char neg_edg_mask[8]={0};
+  29            char dont_care_mask[8]={0};
+  30            int idle;
+  31          
+  32            
+  33          void wait (void)  {                   /* wait function */
+  34   1        ;                                   /* only to delay for LED flashes */
+  35   1      }
+  36          
+  37          
+  38          void serial_init(){
+  39   1            TMOD |=0x20; //Timer1 in Mode2.
+  40   1            TH1=-3;    // 9600 Baud rate at 11.0592MHz
+  41   1            SCON=0x50; // Asynchronous mode 8-bit data and 1-stop bit
+  42   1            TR1=1;     //Turn ON the timer.
+  43   1      }
+  44          void serial_send(unsigned char dat){
+  45   1              while(!TI);
+  46   1              TI = 0;
+  47   1              SBUF = dat;
+  48   1      }
+  49          unsigned char serial_read(){
+  50   1              while(!RI);
+  51   1              RI = 0;
+  52   1              return SBUF;
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 2   
+
+  53   1      }
+  54          void print_string(char* s){
+  55   1        int i=0;
+  56   1        while(s[i]!=0){
+  57   2          serial_send(s[i]);
+  58   2          i++;
+  59   2        }
+  60   1      }
+  61          void print_intA(int *num){
+  62   1        int start=0;
+  63   1        int i;
+  64   1        while(num[start]!=0 && start<3){
+  65   2          start++;
+  66   2        }
+  67   1        for (i=start;i<=3; i++){
+  68   2          if (num[i]<10)
+  69   2            serial_send('0'+num[i]);
+  70   2          else
+  71   2            serial_send('A'+num[i]);
+  72   2        }
+  73   1      }
+  74          void print_int(int num){
+  75   1        int number[4];
+  76   1        int i;
+  77   1        for (i=3;i>=0; i--){
+  78   2          number[i]=num%16;
+  79   2          num=num/16;
+  80   2        }
+  81   1        print_intA(number);
+  82   1      }
+  83          
+  84          void read_mask(char * mask_name, char* mask_pointer){
+  85   1        int i,j;
+  86   1        char val;
+  87   1        int byte_value=0;
+  88   1        print_string("Enter 64 bit for ");
+  89   1        print_string (mask_name);
+  90   1        print_string("Mask 'X': byte of zero, 'H': byte of one, '0' bit of zero, '1'bit of zerp \n\r");
+  91   1      
+  92   1        for (i=0;i<64;i++){
+  93   2          val = serial_read();
+  94   2          switch (val){
+  95   3            case 'x': ; case 'X': i+=3; 
+  96   3              for (j=0;j<4 && i<64;j++){
+  97   4                mask_pointer[i/8]&= ~(1<<i%8);
+  98   4                i++;
+  99   4              }break;
+ 100   3            case 'z': ; case 'Z':byte_value=1;
+ 101   3              for (j=0;j<4 && i<64;j++){
+ 102   4                mask_pointer[i/8]|= 1<<i%8;
+ 103   4                i++;
+ 104   4              }
+ 105   3              i--;
+ 106   3              break;
+ 107   3            case '1':mask_pointer[i/8]|= 1<<i%8;
+ 108   3              break;
+ 109   3            case '0':mask_pointer[i/8] &= ~(1<<i%8);break;
+ 110   3            default : break;
+ 111   3          }
+ 112   2        }
+ 113   1        
+ 114   1      }
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 3   
+
+ 115          
+ 116          void write_mask(char* mask_pointer, int mask_idx){
+ 117   1        int byte;
+ 118   1        char * mm= (char *) 126;
+ 119   1        P0= mask_idx;
+ 120   1        for (byte=0; byte<8; byte++){
+ 121   2          P1=byte;
+ 122   2          P2= mask_pointer[byte];
+ 123   2          *mm = 0; //data is not imprtant 
+ 124   2        }
+ 125   1      }
+ 126          void unidle_dla(){
+ 127   1        char * restart;
+ 128   1        if (idle){
+ 129   2          restart = (char* )123;
+ 130   2          restart = 1;// value dosnt matter any value writing to 124 sends stop
+ 131   2          idle=0;
+ 132   2        }
+ 133   1      }
+ 134          void idle_dla (){
+ 135   1        if(!idle){
+ 136   2          char * stop= (char* )123;
+ 137   2          stop = 1;// value dosnt matter any value writing to 124 sends stop
+ 138   2          idle=1;
+ 139   2        }
+ 140   1      }
+ 141          void restart_dla(){
+ 142   1            // send restart sigal
+ 143   1            char * restart= (char* )124;
+ 144   1            restart = 1;// value dosnt matter any value writing to 124 sends stop
+ 145   1      }
+ 146          
+ 147          void config_dla(){
+ 148   1        idle_dla();
+ 149   1        print_string("configure DLA: \n\r");
+ 150   1        print_string("For pre-triger enter 0 and for post enter 1");
+ 151   1        pre_post_trigger=serial_read();
+ 152   1        
+ 153   1        read_mask( "HI", hi_mask);
+ 154   1        read_mask( "Low", low_mask);
+ 155   1        read_mask( "Pos Edge", pos_edg_mask);
+ 156   1        read_mask( "Neg Edge", neg_edg_mask);
+ 157   1        read_mask( "Dont Care", dont_care_mask);
+ 158   1      
+ 159   1        write_mask(hi_mask,0);
+ 160   1        write_mask(low_mask,1);
+ 161   1        write_mask(pos_edg_mask,2);
+ 162   1        write_mask(neg_edg_mask,3);
+ 163   1        write_mask(dont_care_mask,4);
+ 164   1      }
+ 165          
+ 166          void main (void)  {
+ 167   1        int i,j,k, count=0;
+ 168   1        unsigned char c2;
+ 169   1        //serial_init();
+ 170   1        serial_init();
+ 171   1            TI=1;
+ 172   1      
+ 173   1        idle =1;
+ 174   1      
+ 175   1        
+ 176   1        while (1){
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 4   
+
+ 177   2          c2 = serial_read();
+ 178   2          serial_send(c2);
+ 179   2      
+ 180   2          if (P3){
+ 181   3            //print caputeted data
+ 182   3            for (i=0; i<4 ;i++){
+ 183   4              P1=i;
+ 184   4              for (j=0; j<256 ;j++){
+ 185   5                P0=j;
+ 186   5                print_string("adress: 0x");
+ 187   5                print_int(count++);
+ 188   5                print_string(" ");
+ 189   5                for (k=7;k>=0;k--){
+ 190   6                  P2=k;
+ 191   6                  print_int(P2);
+ 192   6                  print_string(" \n\r");
+ 193   6                }
+ 194   5              }
+ 195   4            }
+ 196   3          }
+ 197   2      
+ 198   2          switch (c2){
+ 199   3            case 'c':case 'C':
+ 200   3              config_dla();
+ 201   3              break;
+ 202   3            case 's':case 'S':
+ 203   3              unidle_dla();
+ 204   3              restart_dla();
+ 205   3              break;
+ 206   3      
+ 207   3          }
+ 208   2          
+ 209   2        } 
+ 210   1      }
+ 211          
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 5   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION wait (BEGIN)
+                                           ; SOURCE LINE # 33
+                                           ; SOURCE LINE # 35
+0000 22                RET     
+             ; FUNCTION wait (END)
+
+             ; FUNCTION serial_init (BEGIN)
+                                           ; SOURCE LINE # 38
+                                           ; SOURCE LINE # 39
+0000 438920            ORL     TMOD,#020H
+                                           ; SOURCE LINE # 40
+0003 758DFD            MOV     TH1,#0FDH
+                                           ; SOURCE LINE # 41
+0006 759850            MOV     SCON,#050H
+                                           ; SOURCE LINE # 42
+0009 D28E              SETB    TR1
+                                           ; SOURCE LINE # 43
+000B 22                RET     
+             ; FUNCTION serial_init (END)
+
+             ; FUNCTION _serial_send (BEGIN)
+                                           ; SOURCE LINE # 44
+;---- Variable 'dat' assigned to Register 'R7' ----
+0000         ?C0003:
+                                           ; SOURCE LINE # 45
+0000 3099FD            JNB     TI,?C0003
+0003         ?C0004:
+                                           ; SOURCE LINE # 46
+0003 C299              CLR     TI
+                                           ; SOURCE LINE # 47
+0005 8F99              MOV     SBUF,R7
+                                           ; SOURCE LINE # 48
+0007 22                RET     
+             ; FUNCTION _serial_send (END)
+
+             ; FUNCTION serial_read (BEGIN)
+                                           ; SOURCE LINE # 49
+0000         ?C0006:
+                                           ; SOURCE LINE # 50
+0000 3098FD            JNB     RI,?C0006
+0003         ?C0007:
+                                           ; SOURCE LINE # 51
+0003 C298              CLR     RI
+                                           ; SOURCE LINE # 52
+0005 AF99              MOV     R7,SBUF
+                                           ; SOURCE LINE # 53
+0007         ?C0008:
+0007 22                RET     
+             ; FUNCTION serial_read (END)
+
+             ; FUNCTION _print_string (BEGIN)
+                                           ; SOURCE LINE # 54
+0000 8B00        R     MOV     s,R3
+0002 8A00        R     MOV     s+01H,R2
+0004 8900        R     MOV     s+02H,R1
+                                           ; SOURCE LINE # 55
+;---- Variable 'i' assigned to Register 'R4/R5' ----
+0006 E4                CLR     A
+0007 FD                MOV     R5,A
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 6   
+
+0008 FC                MOV     R4,A
+0009         ?C0009:
+                                           ; SOURCE LINE # 56
+0009 AB00        R     MOV     R3,s
+000B AA00        R     MOV     R2,s+01H
+000D A900        R     MOV     R1,s+02H
+000F 8D82              MOV     DPL,R5
+0011 8C83              MOV     DPH,R4
+0013 1100        E     ACALL   ?C?CLDOPTR
+0015 FF                MOV     R7,A
+0016 6009              JZ      ?C0011
+                                           ; SOURCE LINE # 57
+0018 1100        R     ACALL   _serial_send
+                                           ; SOURCE LINE # 58
+001A 0D                INC     R5
+001B BD0001            CJNE    R5,#00H,?C0070
+001E 0C                INC     R4
+001F         ?C0070:
+                                           ; SOURCE LINE # 59
+001F 80E8              SJMP    ?C0009
+                                           ; SOURCE LINE # 60
+0021         ?C0011:
+0021 22                RET     
+             ; FUNCTION _print_string (END)
+
+             ; FUNCTION _print_intA (BEGIN)
+                                           ; SOURCE LINE # 61
+;---- Variable 'num' assigned to Register 'R1/R2/R3' ----
+                                           ; SOURCE LINE # 62
+0000 E4                CLR     A
+0001 F500        R     MOV     start,A
+0003 F500        R     MOV     start+01H,A
+0005         ?C0012:
+                                           ; SOURCE LINE # 64
+0005 E500        R     MOV     A,start+01H
+0007 25E0              ADD     A,ACC
+0009 FF                MOV     R7,A
+000A E500        R     MOV     A,start
+000C 33                RLC     A
+000D 8F82              MOV     DPL,R7
+000F F583              MOV     DPH,A
+0011 1100        E     ACALL   ?C?ILDOPTR
+0013 45F0              ORL     A,B
+0015 6017              JZ      ?C0013
+0017 C3                CLR     C
+0018 E500        R     MOV     A,start+01H
+001A 9403              SUBB    A,#03H
+001C E500        R     MOV     A,start
+001E 6480              XRL     A,#080H
+0020 9480              SUBB    A,#080H
+0022 500A              JNC     ?C0013
+                                           ; SOURCE LINE # 65
+0024 0500        R     INC     start+01H
+0026 E500        R     MOV     A,start+01H
+0028 70DB              JNZ     ?C0012
+002A 0500        R     INC     start
+002C         ?C0071:
+                                           ; SOURCE LINE # 66
+002C 80D7              SJMP    ?C0012
+002E         ?C0013:
+                                           ; SOURCE LINE # 67
+;---- Variable 'i' assigned to Register 'R4/R5' ----
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 7   
+
+002E AD00        R     MOV     R5,start+01H
+0030 AC00        R     MOV     R4,start
+0032         ?C0014:
+0032 D3                SETB    C
+0033 ED                MOV     A,R5
+0034 9403              SUBB    A,#03H
+0036 EC                MOV     A,R4
+0037 6480              XRL     A,#080H
+0039 9480              SUBB    A,#080H
+003B 5036              JNC     ?C0019
+                                           ; SOURCE LINE # 68
+003D ED                MOV     A,R5
+003E 25E0              ADD     A,ACC
+0040 FF                MOV     R7,A
+0041 EC                MOV     A,R4
+0042 33                RLC     A
+0043 8F82              MOV     DPL,R7
+0045 F583              MOV     DPH,A
+0047 1100        E     ACALL   ?C?ILDOPTR
+0049 FF                MOV     R7,A
+004A AEF0              MOV     R6,B
+004C C3                CLR     C
+004D 940A              SUBB    A,#0AH
+004F EE                MOV     A,R6
+0050 6480              XRL     A,#080H
+0052 9480              SUBB    A,#080H
+0054 5005              JNC     ?C0017
+                                           ; SOURCE LINE # 69
+0056 EF                MOV     A,R7
+0057 2430              ADD     A,#030H
+0059 800E              SJMP    ?C0094
+005B         ?C0017:
+                                           ; SOURCE LINE # 71
+005B ED                MOV     A,R5
+005C 25E0              ADD     A,ACC
+005E FF                MOV     R7,A
+005F EC                MOV     A,R4
+0060 33                RLC     A
+0061 8F82              MOV     DPL,R7
+0063 F583              MOV     DPH,A
+0065 1100        E     ACALL   ?C?ILDOPTR
+0067 2441              ADD     A,#041H
+0069         ?C0094:
+0069 FF                MOV     R7,A
+006A 1100        R     ACALL   _serial_send
+                                           ; SOURCE LINE # 72
+006C         ?C0016:
+006C 0D                INC     R5
+006D BD0001            CJNE    R5,#00H,?C0072
+0070 0C                INC     R4
+0071         ?C0072:
+0071 80BF              SJMP    ?C0014
+                                           ; SOURCE LINE # 73
+0073         ?C0019:
+0073 22                RET     
+             ; FUNCTION _print_intA (END)
+
+             ; FUNCTION _print_int (BEGIN)
+                                           ; SOURCE LINE # 74
+;---- Variable 'num' assigned to Register 'R2/R3' ----
+0000 AB07              MOV     R3,AR7
+0002 AA06              MOV     R2,AR6
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 8   
+
+                                           ; SOURCE LINE # 77
+;---- Variable 'i' assigned to Register 'DPTR' ----
+0004 900003            MOV     DPTR,#03H
+0007         ?C0020:
+                                           ; SOURCE LINE # 78
+0007 7C00              MOV     R4,#00H
+0009 7D10              MOV     R5,#010H
+000B AF03              MOV     R7,AR3
+000D AE02              MOV     R6,AR2
+000F 1100        E     ACALL   ?C?SIDIV
+0011 AF82              MOV     R7,DPL
+0013 EF                MOV     A,R7
+0014 25E0              ADD     A,ACC
+0016 2400        R     ADD     A,#LOW number
+0018 F8                MOV     R0,A
+0019 A604              MOV     @R0,AR4
+001B 08                INC     R0
+001C A605              MOV     @R0,AR5
+                                           ; SOURCE LINE # 79
+001E 7C00              MOV     R4,#00H
+0020 7D10              MOV     R5,#010H
+0022 AF03              MOV     R7,AR3
+0024 AE02              MOV     R6,AR2
+0026 1100        E     ACALL   ?C?SIDIV
+0028 AA06              MOV     R2,AR6
+002A AB07              MOV     R3,AR7
+                                           ; SOURCE LINE # 80
+002C E582              MOV     A,DPL
+002E 1582              DEC     DPL
+0030 7002              JNZ     ?C0073
+0032 1583              DEC     DPH
+0034         ?C0073:
+0034 E582              MOV     A,DPL
+0036 B4FFCE            CJNE    A,#0FFH,?C0020
+0039 E583              MOV     A,DPH
+003B B4FFC9            CJNE    A,#0FFH,?C0020
+003E         ?C0021:
+                                           ; SOURCE LINE # 81
+003E 7B00              MOV     R3,#00H
+0040 7A00        R     MOV     R2,#HIGH number
+0042 7900        R     MOV     R1,#LOW number
+0044 0100        R     AJMP    _print_intA
+             ; FUNCTION _print_int (END)
+
+             ; FUNCTION _read_mask (BEGIN)
+                                           ; SOURCE LINE # 84
+0000 8B00        R     MOV     mask_name,R3
+0002 8A00        R     MOV     mask_name+01H,R2
+0004 8900        R     MOV     mask_name+02H,R1
+                                           ; SOURCE LINE # 87
+0006 E4                CLR     A
+0007 F500        R     MOV     byte_value,A
+0009 F500        R     MOV     byte_value+01H,A
+                                           ; SOURCE LINE # 88
+000B 7BFF              MOV     R3,#0FFH
+000D 7A00        R     MOV     R2,#HIGH ?SC_0
+000F 7900        R     MOV     R1,#LOW ?SC_0
+0011 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 89
+0013 AB00        R     MOV     R3,mask_name
+0015 AA00        R     MOV     R2,mask_name+01H
+0017 A900        R     MOV     R1,mask_name+02H
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 9   
+
+0019 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 90
+001B 7BFF              MOV     R3,#0FFH
+001D 7A00        R     MOV     R2,#HIGH ?SC_18
+001F 7900        R     MOV     R1,#LOW ?SC_18
+0021 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 92
+0023 E4                CLR     A
+0024 F500        R     MOV     i,A
+0026 F500        R     MOV     i+01H,A
+0028         ?C0024:
+                                           ; SOURCE LINE # 93
+0028 1100        R     ACALL   serial_read
+;---- Variable 'val' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 94
+002A EF                MOV     A,R7
+002B 24D0              ADD     A,#0D0H
+002D 7002              JNZ     $ + 4H
+002F 0100        R     AJMP    ?C0039
+0031 14                DEC     A
+0032 7002              JNZ     $ + 4H
+0034 0100        R     AJMP    ?C0038
+0036 24D7              ADD     A,#0D7H
+0038 7002              JNZ     $ + 4H
+003A 0100        R     AJMP    ?C0034
+003C 24E2              ADD     A,#0E2H
+003E 600A              JZ      ?C0029
+0040 24FE              ADD     A,#0FEH
+0042 607B              JZ      ?C0034
+0044 2422              ADD     A,#022H
+0046 6002              JZ      $ + 4H
+0048 0100        R     AJMP    ?C0026
+                                           ; SOURCE LINE # 95
+004A         ?C0029:
+004A 7403              MOV     A,#03H
+004C 2500        R     ADD     A,i+01H
+004E F500        R     MOV     i+01H,A
+0050 E4                CLR     A
+0051 3500        R     ADDC    A,i
+0053 F500        R     MOV     i,A
+                                           ; SOURCE LINE # 96
+0055 E4                CLR     A
+0056 F500        R     MOV     j,A
+0058 F500        R     MOV     j+01H,A
+005A         ?C0030:
+005A C3                CLR     C
+005B E500        R     MOV     A,i+01H
+005D 9440              SUBB    A,#040H
+005F E500        R     MOV     A,i
+0061 6480              XRL     A,#080H
+0063 9480              SUBB    A,#080H
+0065 4002              JC      $ + 4H
+0067 0100        R     AJMP    ?C0026
+                                           ; SOURCE LINE # 97
+0069 AE00        R     MOV     R6,i
+006B AF00        R     MOV     R7,i+01H
+006D 7C00              MOV     R4,#00H
+006F 7D08              MOV     R5,#08H
+0071 1100        E     ACALL   ?C?SIDIV
+0073 AB00        R     MOV     R3,mask_pointer
+0075 E500        R     MOV     A,mask_pointer+02H
+0077 2F                ADD     A,R7
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 10  
+
+0078 F9                MOV     R1,A
+0079 E500        R     MOV     A,mask_pointer+01H
+007B 3E                ADDC    A,R6
+007C FA                MOV     R2,A
+007D C003              PUSH    AR3
+007F C002              PUSH    AR2
+0081 C001              PUSH    AR1
+0083 1100        E     ACALL   ?C?CLDPTR
+0085 FB                MOV     R3,A
+0086 AE00        R     MOV     R6,i
+0088 AF00        R     MOV     R7,i+01H
+008A 7C00              MOV     R4,#00H
+008C 7D08              MOV     R5,#08H
+008E 1100        E     ACALL   ?C?SIDIV
+0090 AF05              MOV     R7,AR5
+0092 7401              MOV     A,#01H
+0094 A807              MOV     R0,AR7
+0096 08                INC     R0
+0097 8002              SJMP    ?C0076
+0099         ?C0075:
+0099 C3                CLR     C
+009A 33                RLC     A
+009B         ?C0076:
+009B D8FC              DJNZ    R0,?C0075
+009D F4                CPL     A
+009E 5B                ANL     A,R3
+009F D001              POP     AR1
+00A1 D002              POP     AR2
+00A3 D003              POP     AR3
+00A5 1100        E     ACALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 98
+00A7 0500        R     INC     i+01H
+00A9 E500        R     MOV     A,i+01H
+00AB 7002              JNZ     ?C0077
+00AD 0500        R     INC     i
+00AF         ?C0077:
+                                           ; SOURCE LINE # 99
+00AF 0500        R     INC     j+01H
+00B1 E500        R     MOV     A,j+01H
+00B3 7002              JNZ     ?C0078
+00B5 0500        R     INC     j
+00B7         ?C0078:
+00B7 6404              XRL     A,#04H
+00B9 4500        R     ORL     A,j
+00BB 709D              JNZ     ?C0030
+00BD 0100        R     AJMP    ?C0026
+                                           ; SOURCE LINE # 100
+00BF         ?C0034:
+00BF 750000      R     MOV     byte_value,#00H
+00C2 750001      R     MOV     byte_value+01H,#01H
+                                           ; SOURCE LINE # 101
+00C5 E4                CLR     A
+00C6 F500        R     MOV     j,A
+00C8 F500        R     MOV     j+01H,A
+00CA         ?C0035:
+00CA C3                CLR     C
+00CB E500        R     MOV     A,i+01H
+00CD 9440              SUBB    A,#040H
+00CF E500        R     MOV     A,i
+00D1 6480              XRL     A,#080H
+00D3 9480              SUBB    A,#080H
+00D5 5053              JNC     ?C0036
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 11  
+
+                                           ; SOURCE LINE # 102
+00D7 AE00        R     MOV     R6,i
+00D9 AF00        R     MOV     R7,i+01H
+00DB 7C00              MOV     R4,#00H
+00DD 7D08              MOV     R5,#08H
+00DF 1100        E     ACALL   ?C?SIDIV
+00E1 AB00        R     MOV     R3,mask_pointer
+00E3 E500        R     MOV     A,mask_pointer+02H
+00E5 2F                ADD     A,R7
+00E6 F9                MOV     R1,A
+00E7 E500        R     MOV     A,mask_pointer+01H
+00E9 3E                ADDC    A,R6
+00EA FA                MOV     R2,A
+00EB C003              PUSH    AR3
+00ED C002              PUSH    AR2
+00EF C001              PUSH    AR1
+00F1 1100        E     ACALL   ?C?CLDPTR
+00F3 FB                MOV     R3,A
+00F4 AE00        R     MOV     R6,i
+00F6 AF00        R     MOV     R7,i+01H
+00F8 7C00              MOV     R4,#00H
+00FA 7D08              MOV     R5,#08H
+00FC 1100        E     ACALL   ?C?SIDIV
+00FE AF05              MOV     R7,AR5
+0100 7401              MOV     A,#01H
+0102 A807              MOV     R0,AR7
+0104 08                INC     R0
+0105 8002              SJMP    ?C0080
+0107         ?C0079:
+0107 C3                CLR     C
+0108 33                RLC     A
+0109         ?C0080:
+0109 D8FC              DJNZ    R0,?C0079
+010B 4B                ORL     A,R3
+010C D001              POP     AR1
+010E D002              POP     AR2
+0110 D003              POP     AR3
+0112 1100        E     ACALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 103
+0114 0500        R     INC     i+01H
+0116 E500        R     MOV     A,i+01H
+0118 7002              JNZ     ?C0081
+011A 0500        R     INC     i
+011C         ?C0081:
+                                           ; SOURCE LINE # 104
+011C 0500        R     INC     j+01H
+011E E500        R     MOV     A,j+01H
+0120 7002              JNZ     ?C0082
+0122 0500        R     INC     j
+0124         ?C0082:
+0124 6404              XRL     A,#04H
+0126 4500        R     ORL     A,j
+0128 70A0              JNZ     ?C0035
+012A         ?C0036:
+                                           ; SOURCE LINE # 105
+012A E500        R     MOV     A,i+01H
+012C 1500        R     DEC     i+01H
+012E 7079              JNZ     ?C0026
+0130 1500        R     DEC     i
+0132         ?C0083:
+                                           ; SOURCE LINE # 106
+0132 8075              SJMP    ?C0026
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 12  
+
+                                           ; SOURCE LINE # 107
+0134         ?C0038:
+0134 AE00        R     MOV     R6,i
+0136 AF00        R     MOV     R7,i+01H
+0138 7C00              MOV     R4,#00H
+013A 7D08              MOV     R5,#08H
+013C 1100        E     ACALL   ?C?SIDIV
+013E AB00        R     MOV     R3,mask_pointer
+0140 E500        R     MOV     A,mask_pointer+02H
+0142 2F                ADD     A,R7
+0143 F9                MOV     R1,A
+0144 E500        R     MOV     A,mask_pointer+01H
+0146 3E                ADDC    A,R6
+0147 FA                MOV     R2,A
+0148 C003              PUSH    AR3
+014A C002              PUSH    AR2
+014C C001              PUSH    AR1
+014E 1100        E     ACALL   ?C?CLDPTR
+0150 FB                MOV     R3,A
+0151 AE00        R     MOV     R6,i
+0153 AF00        R     MOV     R7,i+01H
+0155 7C00              MOV     R4,#00H
+0157 7D08              MOV     R5,#08H
+0159 1100        E     ACALL   ?C?SIDIV
+015B AF05              MOV     R7,AR5
+015D 7401              MOV     A,#01H
+015F A807              MOV     R0,AR7
+0161 08                INC     R0
+0162 8002              SJMP    ?C0085
+0164         ?C0084:
+0164 C3                CLR     C
+0165 33                RLC     A
+0166         ?C0085:
+0166 D8FC              DJNZ    R0,?C0084
+0168 4B                ORL     A,R3
+                                           ; SOURCE LINE # 108
+0169 8036              SJMP    ?C0095
+                                           ; SOURCE LINE # 109
+016B         ?C0039:
+016B AE00        R     MOV     R6,i
+016D AF00        R     MOV     R7,i+01H
+016F 7C00              MOV     R4,#00H
+0171 7D08              MOV     R5,#08H
+0173 1100        E     ACALL   ?C?SIDIV
+0175 AB00        R     MOV     R3,mask_pointer
+0177 E500        R     MOV     A,mask_pointer+02H
+0179 2F                ADD     A,R7
+017A F9                MOV     R1,A
+017B E500        R     MOV     A,mask_pointer+01H
+017D 3E                ADDC    A,R6
+017E FA                MOV     R2,A
+017F C003              PUSH    AR3
+0181 C002              PUSH    AR2
+0183 C001              PUSH    AR1
+0185 1100        E     ACALL   ?C?CLDPTR
+0187 FB                MOV     R3,A
+0188 AE00        R     MOV     R6,i
+018A AF00        R     MOV     R7,i+01H
+018C 7C00              MOV     R4,#00H
+018E 7D08              MOV     R5,#08H
+0190 1100        E     ACALL   ?C?SIDIV
+0192 AF05              MOV     R7,AR5
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 13  
+
+0194 7401              MOV     A,#01H
+0196 A807              MOV     R0,AR7
+0198 08                INC     R0
+0199 8002              SJMP    ?C0087
+019B         ?C0086:
+019B C3                CLR     C
+019C 33                RLC     A
+019D         ?C0087:
+019D D8FC              DJNZ    R0,?C0086
+019F F4                CPL     A
+01A0 5B                ANL     A,R3
+01A1         ?C0095:
+01A1 D001              POP     AR1
+01A3 D002              POP     AR2
+01A5 D003              POP     AR3
+01A7 1100        E     ACALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 110
+                                           ; SOURCE LINE # 111
+                                           ; SOURCE LINE # 112
+01A9         ?C0026:
+01A9 0500        R     INC     i+01H
+01AB E500        R     MOV     A,i+01H
+01AD 7002              JNZ     ?C0088
+01AF 0500        R     INC     i
+01B1         ?C0088:
+01B1 C3                CLR     C
+01B2 9440              SUBB    A,#040H
+01B4 E500        R     MOV     A,i
+01B6 6480              XRL     A,#080H
+01B8 9480              SUBB    A,#080H
+01BA 5002              JNC     $ + 4H
+01BC 0100        R     AJMP    ?C0024
+                                           ; SOURCE LINE # 114
+01BE         ?C0041:
+01BE 22                RET     
+             ; FUNCTION _read_mask (END)
+
+             ; FUNCTION _write_mask (BEGIN)
+                                           ; SOURCE LINE # 116
+0000 8B00        R     MOV     mask_pointer,R3
+0002 8A00        R     MOV     mask_pointer+01H,R2
+0004 8900        R     MOV     mask_pointer+02H,R1
+;---- Variable 'mask_idx' assigned to Register 'R4/R5' ----
+                                           ; SOURCE LINE # 118
+0006 750000      R     MOV     mm,#00H
+0009 750000      R     MOV     mm+01H,#00H
+000C 75007E      R     MOV     mm+02H,#07EH
+                                           ; SOURCE LINE # 119
+000F 8D80              MOV     P0,R5
+                                           ; SOURCE LINE # 120
+;---- Variable 'byte' assigned to Register 'R6/R7' ----
+0011 E4                CLR     A
+0012 FF                MOV     R7,A
+0013 FE                MOV     R6,A
+0014         ?C0042:
+                                           ; SOURCE LINE # 121
+0014 8F90              MOV     P1,R7
+                                           ; SOURCE LINE # 122
+0016 AB00        R     MOV     R3,mask_pointer
+0018 AA00        R     MOV     R2,mask_pointer+01H
+001A A900        R     MOV     R1,mask_pointer+02H
+001C 8F82              MOV     DPL,R7
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 14  
+
+001E 8E83              MOV     DPH,R6
+0020 1100        E     ACALL   ?C?CLDOPTR
+0022 F5A0              MOV     P2,A
+                                           ; SOURCE LINE # 123
+0024 AB00        R     MOV     R3,mm
+0026 AA00        R     MOV     R2,mm+01H
+0028 A900        R     MOV     R1,mm+02H
+002A E4                CLR     A
+002B 1100        E     ACALL   ?C?CSTPTR
+                                           ; SOURCE LINE # 124
+002D 0F                INC     R7
+002E BF0001            CJNE    R7,#00H,?C0089
+0031 0E                INC     R6
+0032         ?C0089:
+0032 EF                MOV     A,R7
+0033 6408              XRL     A,#08H
+0035 4E                ORL     A,R6
+0036 70DC              JNZ     ?C0042
+                                           ; SOURCE LINE # 125
+0038         ?C0045:
+0038 22                RET     
+             ; FUNCTION _write_mask (END)
+
+             ; FUNCTION unidle_dla (BEGIN)
+                                           ; SOURCE LINE # 126
+                                           ; SOURCE LINE # 128
+0000 E500        R     MOV     A,idle+01H
+0002 4500        R     ORL     A,idle
+0004 6017              JZ      ?C0047
+                                           ; SOURCE LINE # 129
+0006 750000      R     MOV     restart,#00H
+0009 750000      R     MOV     restart+01H,#00H
+000C 75007B      R     MOV     restart+02H,#07BH
+                                           ; SOURCE LINE # 130
+000F 750000      R     MOV     restart,#00H
+0012 750000      R     MOV     restart+01H,#00H
+0015 750001      R     MOV     restart+02H,#01H
+                                           ; SOURCE LINE # 131
+0018 E4                CLR     A
+0019 F500        R     MOV     idle,A
+001B F500        R     MOV     idle+01H,A
+                                           ; SOURCE LINE # 132
+                                           ; SOURCE LINE # 133
+001D         ?C0047:
+001D 22                RET     
+             ; FUNCTION unidle_dla (END)
+
+             ; FUNCTION idle_dla (BEGIN)
+                                           ; SOURCE LINE # 134
+                                           ; SOURCE LINE # 135
+0000 E500        R     MOV     A,idle+01H
+0002 4500        R     ORL     A,idle
+0004 7013              JNZ     ?C0049
+                                           ; SOURCE LINE # 136
+0006 F500        R     MOV     stop,A
+0008 F500        R     MOV     stop+01H,A
+000A 75007B      R     MOV     stop+02H,#07BH
+                                           ; SOURCE LINE # 137
+000D F500        R     MOV     stop,A
+000F F500        R     MOV     stop+01H,A
+0011 750001      R     MOV     stop+02H,#01H
+                                           ; SOURCE LINE # 138
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 15  
+
+0014 F500        R     MOV     idle,A
+0016 750001      R     MOV     idle+01H,#01H
+                                           ; SOURCE LINE # 139
+                                           ; SOURCE LINE # 140
+0019         ?C0049:
+0019 22                RET     
+             ; FUNCTION idle_dla (END)
+
+             ; FUNCTION restart_dla (BEGIN)
+                                           ; SOURCE LINE # 141
+                                           ; SOURCE LINE # 143
+0000 750000      R     MOV     restart,#00H
+0003 750000      R     MOV     restart+01H,#00H
+0006 75007C      R     MOV     restart+02H,#07CH
+                                           ; SOURCE LINE # 144
+0009 750000      R     MOV     restart,#00H
+000C 750000      R     MOV     restart+01H,#00H
+000F 750001      R     MOV     restart+02H,#01H
+                                           ; SOURCE LINE # 145
+0012 22                RET     
+             ; FUNCTION restart_dla (END)
+
+             ; FUNCTION config_dla (BEGIN)
+                                           ; SOURCE LINE # 147
+                                           ; SOURCE LINE # 148
+0000 1100        R     ACALL   idle_dla
+                                           ; SOURCE LINE # 149
+0002 7BFF              MOV     R3,#0FFH
+0004 7A00        R     MOV     R2,#HIGH ?SC_95
+0006 7900        R     MOV     R1,#LOW ?SC_95
+0008 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 150
+000A 7BFF              MOV     R3,#0FFH
+000C 7A00        R     MOV     R2,#HIGH ?SC_113
+000E 7900        R     MOV     R1,#LOW ?SC_113
+0010 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 151
+0012 1100        R     ACALL   serial_read
+0014 8F00        R     MOV     pre_post_trigger,R7
+                                           ; SOURCE LINE # 153
+0016 750000      R     MOV     ?_read_mask?BYTE+03H,#00H
+0019 750000      R     MOV     ?_read_mask?BYTE+04H,#HIGH hi_mask
+001C 750000      R     MOV     ?_read_mask?BYTE+05H,#LOW hi_mask
+001F 7BFF              MOV     R3,#0FFH
+0021 7A00        R     MOV     R2,#HIGH ?SC_157
+0023 7900        R     MOV     R1,#LOW ?SC_157
+0025 1100        R     ACALL   _read_mask
+                                           ; SOURCE LINE # 154
+0027 750000      R     MOV     ?_read_mask?BYTE+03H,#00H
+002A 750000      R     MOV     ?_read_mask?BYTE+04H,#HIGH low_mask
+002D 750000      R     MOV     ?_read_mask?BYTE+05H,#LOW low_mask
+0030 7BFF              MOV     R3,#0FFH
+0032 7A00        R     MOV     R2,#HIGH ?SC_160
+0034 7900        R     MOV     R1,#LOW ?SC_160
+0036 1100        R     ACALL   _read_mask
+                                           ; SOURCE LINE # 155
+0038 750000      R     MOV     ?_read_mask?BYTE+03H,#00H
+003B 750000      R     MOV     ?_read_mask?BYTE+04H,#HIGH pos_edg_mask
+003E 750000      R     MOV     ?_read_mask?BYTE+05H,#LOW pos_edg_mask
+0041 7BFF              MOV     R3,#0FFH
+0043 7A00        R     MOV     R2,#HIGH ?SC_164
+0045 7900        R     MOV     R1,#LOW ?SC_164
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 16  
+
+0047 1100        R     ACALL   _read_mask
+                                           ; SOURCE LINE # 156
+0049 750000      R     MOV     ?_read_mask?BYTE+03H,#00H
+004C 750000      R     MOV     ?_read_mask?BYTE+04H,#HIGH neg_edg_mask
+004F 750000      R     MOV     ?_read_mask?BYTE+05H,#LOW neg_edg_mask
+0052 7BFF              MOV     R3,#0FFH
+0054 7A00        R     MOV     R2,#HIGH ?SC_173
+0056 7900        R     MOV     R1,#LOW ?SC_173
+0058 1100        R     ACALL   _read_mask
+                                           ; SOURCE LINE # 157
+005A 750000      R     MOV     ?_read_mask?BYTE+03H,#00H
+005D 750000      R     MOV     ?_read_mask?BYTE+04H,#HIGH dont_care_mask
+0060 750000      R     MOV     ?_read_mask?BYTE+05H,#LOW dont_care_mask
+0063 7BFF              MOV     R3,#0FFH
+0065 7A00        R     MOV     R2,#HIGH ?SC_182
+0067 7900        R     MOV     R1,#LOW ?SC_182
+0069 1100        R     ACALL   _read_mask
+                                           ; SOURCE LINE # 159
+006B 7B00              MOV     R3,#00H
+006D 7A00        R     MOV     R2,#HIGH hi_mask
+006F 7900        R     MOV     R1,#LOW hi_mask
+0071 E4                CLR     A
+0072 FD                MOV     R5,A
+0073 FC                MOV     R4,A
+0074 1100        R     ACALL   _write_mask
+                                           ; SOURCE LINE # 160
+0076 7B00              MOV     R3,#00H
+0078 7A00        R     MOV     R2,#HIGH low_mask
+007A 7900        R     MOV     R1,#LOW low_mask
+007C 0D                INC     R5
+007D 1100        R     ACALL   _write_mask
+                                           ; SOURCE LINE # 161
+007F 7B00              MOV     R3,#00H
+0081 7A00        R     MOV     R2,#HIGH pos_edg_mask
+0083 7900        R     MOV     R1,#LOW pos_edg_mask
+0085 0D                INC     R5
+0086 1100        R     ACALL   _write_mask
+                                           ; SOURCE LINE # 162
+0088 7B00              MOV     R3,#00H
+008A 7A00        R     MOV     R2,#HIGH neg_edg_mask
+008C 7900        R     MOV     R1,#LOW neg_edg_mask
+008E 0D                INC     R5
+008F 1100        R     ACALL   _write_mask
+                                           ; SOURCE LINE # 163
+0091 7B00              MOV     R3,#00H
+0093 7A00        R     MOV     R2,#HIGH dont_care_mask
+0095 7900        R     MOV     R1,#LOW dont_care_mask
+0097 0D                INC     R5
+0098 0100        R     AJMP    _write_mask
+             ; FUNCTION config_dla (END)
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 166
+                                           ; SOURCE LINE # 167
+0000 E4                CLR     A
+0001 F500        R     MOV     count,A
+0003 F500        R     MOV     count+01H,A
+                                           ; SOURCE LINE # 170
+0005 1100        R     ACALL   serial_init
+                                           ; SOURCE LINE # 171
+0007 D299              SETB    TI
+                                           ; SOURCE LINE # 173
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 17  
+
+0009 F500        R     MOV     idle,A
+000B 750001      R     MOV     idle+01H,#01H
+000E         ?C0052:
+                                           ; SOURCE LINE # 176
+                                           ; SOURCE LINE # 177
+000E 1100        R     ACALL   serial_read
+0010 8F00        R     MOV     c2,R7
+                                           ; SOURCE LINE # 178
+0012 1100        R     ACALL   _serial_send
+                                           ; SOURCE LINE # 180
+0014 E5B0              MOV     A,P3
+0016 607A              JZ      ?C0054
+                                           ; SOURCE LINE # 182
+0018 E4                CLR     A
+0019 F500        R     MOV     i,A
+001B F500        R     MOV     i+01H,A
+001D         ?C0055:
+                                           ; SOURCE LINE # 183
+001D 850090      R     MOV     P1,i+01H
+                                           ; SOURCE LINE # 184
+0020 E4                CLR     A
+0021 F500        R     MOV     j,A
+0023 F500        R     MOV     j+01H,A
+0025         ?C0058:
+                                           ; SOURCE LINE # 185
+0025 850080      R     MOV     P0,j+01H
+                                           ; SOURCE LINE # 186
+0028 7BFF              MOV     R3,#0FFH
+002A 7A00        R     MOV     R2,#HIGH ?SC_192
+002C 7900        R     MOV     R1,#LOW ?SC_192
+002E 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 187
+0030 0500        R     INC     count+01H
+0032 E500        R     MOV     A,count+01H
+0034 AE00        R     MOV     R6,count
+0036 7002              JNZ     ?C0090
+0038 0500        R     INC     count
+003A         ?C0090:
+003A 14                DEC     A
+003B FF                MOV     R7,A
+003C 1100        R     ACALL   _print_int
+                                           ; SOURCE LINE # 188
+003E 7BFF              MOV     R3,#0FFH
+0040 7A00        R     MOV     R2,#HIGH ?SC_203
+0042 7900        R     MOV     R1,#LOW ?SC_203
+0044 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 189
+0046 750000      R     MOV     k,#00H
+0049 750007      R     MOV     k+01H,#07H
+004C         ?C0061:
+                                           ; SOURCE LINE # 190
+004C 8500A0      R     MOV     P2,k+01H
+                                           ; SOURCE LINE # 191
+004F AFA0              MOV     R7,P2
+0051 7E00              MOV     R6,#00H
+0053 1100        R     ACALL   _print_int
+                                           ; SOURCE LINE # 192
+0055 7BFF              MOV     R3,#0FFH
+0057 7A00        R     MOV     R2,#HIGH ?SC_205
+0059 7900        R     MOV     R1,#LOW ?SC_205
+005B 1100        R     ACALL   _print_string
+                                           ; SOURCE LINE # 193
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 18  
+
+005D E500        R     MOV     A,k+01H
+005F 1500        R     DEC     k+01H
+0061 7002              JNZ     ?C0091
+0063 1500        R     DEC     k
+0065         ?C0091:
+0065 C3                CLR     C
+0066 E500        R     MOV     A,k
+0068 6480              XRL     A,#080H
+006A 9480              SUBB    A,#080H
+006C 50DE              JNC     ?C0061
+                                           ; SOURCE LINE # 194
+006E         ?C0060:
+006E 0500        R     INC     j+01H
+0070 E500        R     MOV     A,j+01H
+0072 7002              JNZ     ?C0092
+0074 0500        R     INC     j
+0076         ?C0092:
+0076 C3                CLR     C
+0077 E500        R     MOV     A,j
+0079 6480              XRL     A,#080H
+007B 9481              SUBB    A,#081H
+007D 40A6              JC      ?C0058
+                                           ; SOURCE LINE # 195
+007F         ?C0057:
+007F 0500        R     INC     i+01H
+0081 E500        R     MOV     A,i+01H
+0083 7002              JNZ     ?C0093
+0085 0500        R     INC     i
+0087         ?C0093:
+0087 C3                CLR     C
+0088 9404              SUBB    A,#04H
+008A E500        R     MOV     A,i
+008C 6480              XRL     A,#080H
+008E 9480              SUBB    A,#080H
+0090 408B              JC      ?C0055
+                                           ; SOURCE LINE # 196
+0092         ?C0054:
+                                           ; SOURCE LINE # 198
+0092 E500        R     MOV     A,c2
+0094 24AD              ADD     A,#0ADH
+0096 6012              JZ      ?C0068
+0098 24F0              ADD     A,#0F0H
+009A 600A              JZ      ?C0066
+009C 24F0              ADD     A,#0F0H
+009E 600A              JZ      ?C0068
+00A0 2430              ADD     A,#030H
+00A2 6002              JZ      $ + 4H
+00A4 0100        R     AJMP    ?C0052
+                                           ; SOURCE LINE # 199
+00A6         ?C0066:
+                                           ; SOURCE LINE # 200
+00A6 1100        R     ACALL   config_dla
+                                           ; SOURCE LINE # 201
+00A8 0100        R     AJMP    ?C0052
+                                           ; SOURCE LINE # 202
+00AA         ?C0068:
+                                           ; SOURCE LINE # 203
+00AA 1100        R     ACALL   unidle_dla
+                                           ; SOURCE LINE # 204
+00AC 1100        R     ACALL   restart_dla
+                                           ; SOURCE LINE # 205
+00AE 0100        R     AJMP    ?C0052
+C51 COMPILER V9.53.0.0   BLINKY                                                            04/30/2015 16:37:33 PAGE 19  
+
+             ; FUNCTION main (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1158    ----
+   CONSTANT SIZE    =    209    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     43      49
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

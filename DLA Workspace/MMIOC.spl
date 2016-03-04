@@ -1,0 +1,15 @@
+[Inputs]
+in_clk
+in_we
+=in_addr[6:0]=
+[Outputs]
+out_we_cr
+out_we_mm
+out_we_ca
+out_reset
+out_idle
+out_unidle
+[BiDir]
+[ATTRIBUTES]
+VeriModel MMIOC
+

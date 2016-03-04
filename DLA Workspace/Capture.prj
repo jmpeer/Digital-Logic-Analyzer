@@ -1,0 +1,4 @@
+verilog work "Verilog Modules/BRAM_16x1K.v"
+verilog work "Verilog Modules/BRAM_32x1K.v"
+verilog work "Verilog Modules/BRAM_64x1K.v"
+verilog work "Verilog Modules/Capture.v"

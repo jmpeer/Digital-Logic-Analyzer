@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="my8051" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Capture C:|Users|jmpeer|Desktop|Lab 4, Day 4|8051_logic|Verilog Modules|Capture.v</ClosedNode>
+         <ClosedNode>/Capture C:|Users|jmpeer|Desktop|Lab 4, Day 5|8051_logic|Verilog Modules|Capture.v</ClosedNode>
+         <ClosedNode>/MC8051_RAM C:|Users|dshamoui|Desktop|Lab4(Day7)|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_RAM C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_RAM C:|Users|dshamoui|Desktop|Lab4(Day9)_pre_trigger_working|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_RAM C:|Users|jmpeer|Desktop|Lab 4, Day 4|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_RAM C:|Users|jmpeer|Desktop|Lab 4, Day 5|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_RAM C:|Users|jmpeer|Desktop|Lab4|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|dshamoui|Desktop|Lab4(Day7)|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|dshamoui|Desktop|Lab4(Day9)_pre_trigger_working|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|jmpeer|Desktop|Lab 4, Day 4|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|jmpeer|Desktop|Lab 4, Day 5|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|jmpeer|Desktop|Lab4|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/Trigger C:|Users|jmpeer|Desktop|Lab 4, Day 4|8051_logic|Verilog Modules|Trigger.v</ClosedNode>
+         <ClosedNode>/Trigger C:|Users|jmpeer|Desktop|Lab 4, Day 5|8051_logic|Verilog Modules|Trigger.v</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|440_F12|_work|mc8051_design|vhdl02|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|440_F12|_work|mc8051_design|vhdl|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc/i_mc8051_control - mc8051_control - struc</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|445_F12|_work|mc8051_design00|mc8051_design|vhdl|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc/i_mc8051_alu - mc8051_alu - struc</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|445_F12|_work|mc8051_design00|mc8051_design|vhdl|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc/i_mc8051_control - mc8051_control - struc</ClosedNode>
+         <ClosedNode>/top C:|Users|dshamoui|Desktop|Lab4(Day7)|8051_logic|top.sch</ClosedNode>
+         <ClosedNode>/top C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|top.sch/XLXI_1 - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/top C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|top.sch/XLXI_18 - Trigger</ClosedNode>
+         <ClosedNode>/top C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|top.sch/XLXI_22 - Capture</ClosedNode>
+         <ClosedNode>/top C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|top.sch/XLXI_22 - Capture/BRAM_64x1K - BRAM_64x1K</ClosedNode>
+         <ClosedNode>/top C:|Users|dshamoui|Desktop|Lab4(Day8)|8051_logic|top.sch/XLXI_22 - Capture/BRAM_64x1K - BRAM_64x1K/BRAM_32x1K_0 - BRAM_32x1K</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab 4, Day 4|8051_logic|top.sch</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab 4, Day 5|8051_logic|top.sch</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab 4, Day 5|8051_logic|top.sch/XLXI_1 - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab4|8051_logic|top.sch</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab4|8051_logic|top.sch/XLXI_1 - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab4|8051_logic|top.sch/XLXI_18 - Trigger</ClosedNode>
+         <ClosedNode>/top C:|Users|jmpeer|Desktop|Lab4|8051_logic|top.sch/XLXI_22 - Capture</ClosedNode>
+         <ClosedNode>/top C:|_umd|_2012-09-01|440_F12|_work|mc8051_design|03|hardware|top.sch/XLXI_1 - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/top C:|_umd|_2012-09-01|440_F12|_work|mc8051_design|06|hardware|top.sch/XLXI_1 - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/top C:|_umd|_2014-09-01|445_F14|_work|1008|01mc8051|hardware|BRAM|top.sch/XLXI_1 - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/top C:|_umd|_2014-09-01|445_F14|_work|1014|06mc8051|hardware|BRAM|top.sch/XLXI_1 - mc8051_core - struc/i_mc8051_alu - mc8051_alu - struc</ClosedNode>
+         <ClosedNode>/top C:|_umd|_2014-09-01|445_F14|_work|1014|06mc8051|hardware|BRAM|top.sch/XLXI_1 - mc8051_core - struc/i_mc8051_control - mc8051_control - struc</ClosedNode>
+         <ClosedNode>PROJECT</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>top (C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/top.sch)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e1000000020000000000000000000000000200000064ffffffff000000810000000300000002000001e10000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>top (C:/Users/dshamoui/Desktop/Lab4(Day9)_pre_trigger_working/8051_logic/top.sch)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Compile HDL Simulation Libraries</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Compile HDL Simulation Libraries</CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000252000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001860000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>addsub_core_.vhd</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000109000000010001000100000000000000000000000064ffffffff000000810000000000000001000001090000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000013e000000010000000100000000000000000000000064ffffffff0000008100000000000000010000013e0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000000f6000000fa01000000040100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/MC8051_RAM C:|Users|dshamoui|Desktop|Lab4(Day7)|8051_logic|Verilog Modules|MC8051_RAM.v</ClosedNode>
+         <ClosedNode>/MC8051_ROM C:|Users|dshamoui|Desktop|Lab4(Day7)|8051_logic|Verilog Modules|MC8051_ROM.v</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|445_F12|_work|mc8051_design00|mc8051_design|vhdl|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|445_F12|_work|mc8051_design00|mc8051_design|vhdl|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc/i_mc8051_alu - mc8051_alu - struc/i_addsub_core - addsub_core - struc</ClosedNode>
+         <ClosedNode>/mc8051_top - struc C:|_umd|_2012-09-01|445_F12|_work|mc8051_design00|mc8051_design|vhdl|mc8051_top_struc.vhd/i_mc8051_core - mc8051_core - struc/i_mc8051_control - mc8051_control - struc</ClosedNode>
+         <ClosedNode>/top_top_sch_tb C:|Users|dshamoui|Desktop|Lab4(Day7)|8051_logic|toptest.v/UUT - top</ClosedNode>
+         <ClosedNode>/top_top_sch_tb C:|_umd|_2012-09-01|440_F12|_work|mc8051_design|03|hardware|toptest.v/UUT - top</ClosedNode>
+         <ClosedNode>PROJECT</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>UUT - top (C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/top.sch)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000ee000000020000000000000000000000000200000064ffffffff000000810000000300000002000000ee0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>UUT - top (C:/Users/dshamoui/Desktop/Lab4(Day7)/8051_logic/top.sch)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>ISim Simulator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>ISim Simulator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000018a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000018a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Implement Design/Map</ClosedNode>
+         <ClosedNode>Implement Design/Map/Generate Post-Map Static Timing</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Back-annotate Pin Locations</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route/Generate IBIS Model</ClosedNode>
+         <ClosedNode>Implement Design/Translate</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Generate Programming File</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Generate Programming File</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000200000000010000000100000000000000000000000064ffffffff000000810000000000000001000002000000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Check Syntax</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Check Syntax</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001a6000000010000000100000000000000000000000064ffffffff000000810000000000000001000001a60000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="PostRouteSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>PROJECT</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>top_top_sch_tb (C:/_umd/_2014-09-01/445_F14/_work/1014/05mc8051/hardware/BRAM/toptest.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000026f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000026f0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>top_top_sch_tb (C:/_umd/_2014-09-01/445_F14/_work/1014/05mc8051/hardware/BRAM/toptest.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="PostRouteSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000144000000010000000100000000000000000000000064ffffffff000000810000000000000001000001440000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="PostRouteSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>ISim Simulator</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000144000000010000000100000000000000000000000064ffffffff000000810000000000000001000001440000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>ISim Simulator</CurrentItem>
+   </ItemView>
+   <ItemView engineview="PostTransSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/top_top_sch_tb C:|_umd|_2012-09-01|440_F12|_work|mc8051_design|06|hardware|toptest.v</ClosedNode>
+         <ClosedNode>PROJECT</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000cd000000020000000000000000000000000200000064ffffffff000000810000000300000002000000cd0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
+   </ItemView>
+   <ItemView engineview="PostTransSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000146000000010000000100000000000000000000000064ffffffff000000810000000000000001000001460000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="PostTransSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001a6000000010000000100000000000000000000000064ffffffff000000810000000000000001000001a60000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="PostMapSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/top_top_sch_tb C:|_umd|_2014-09-01|445_F14|_work|1014|04mc8051|hardware|BRAM|toptest.v</ClosedNode>
+         <ClosedNode>PROJECT</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>top_top_sch_tb (C:/_umd/_2014-09-01/445_F14/_work/1014/04mc8051/hardware/BRAM/toptest.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000232000000020000000000000000000000000200000064ffffffff000000810000000300000002000002320000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>top_top_sch_tb (C:/_umd/_2014-09-01/445_F14/_work/1014/04mc8051/hardware/BRAM/toptest.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="PostMapSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012d0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="PostMapSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Post-Map Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012d0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Post-Map Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XAW" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" />
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+</Project>

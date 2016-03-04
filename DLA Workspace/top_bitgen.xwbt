@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\dshamoui\Desktop\Lab4(Day9)_pre_trigger_working\8051_logic\top.ncd
+OUTFILE=C:\Users\dshamoui\Desktop\Lab4(Day9)_pre_trigger_working\8051_logic\top.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=C:\Users\dshamoui\Desktop\Lab4(Day9)_pre_trigger_working\8051_logic
+LICENSE=WebPack
+USER_INFO=174913954_0_0_513

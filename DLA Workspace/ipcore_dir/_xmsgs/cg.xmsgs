@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="sim" num="172" delta="old" >Generating IP...
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;my_bram&apos;...</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">&quot;C:\Users\dshamoui\Desktop\Lab4(Day8)\8051_logic\ipcore_dir\tmp\_cg\_dbg\my_bram.prj&quot; line 1: Source file C:/Users/dshamoui/Desktop/Lab4(Day8)/8051_logic/ipcore_dir/tmp/blk_mem_gen_v7_3/blk_mem_gen_v7_3_xst_comp.vhd does not exist</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" >Failed executing Tcl generator.
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" >Failed to generate &apos;my_bram&apos;.  Failed executing Tcl generator.
+
+</msg>
+
+</messages>
+

@@ -1,0 +1,13 @@
+[Inputs]
+in_clk
+in_ce
+=in_P0[7:0]=
+=in_P1[7:0]=
+=in_P2[7:0]=
+=in_data[63:0]=
+[Outputs]
+=out_P0[7:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Capture
+
